@@ -1,0 +1,9 @@
+com\aireplye\aiwriter\service\WhatsappWriterService.class
+com\aireplye\aiwriter\config\WebClientConfig.class
+com\aireplye\aiwriter\dto\MessageRequest.class
+com\aireplye\aiwriter\service\EmailWriterService.class
+com\aireplye\aiwriter\dto\EmailRequest.class
+com\aireplye\aiwriter\AiwriterApplication.class
+com\aireplye\aiwriter\comtroller\WhatsappController.class
+com\aireplye\aiwriter\comtroller\EmailController.class
+com\aireplye\aiwriter\dto\WhatsappRequest.class
