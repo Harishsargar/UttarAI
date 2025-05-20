@@ -1,0 +1,35 @@
+{
+  "name": "AI Replyer",
+  "description": "AI powered Whatsapp and Mail reply generator",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Whatsapp & Mail Reply Assistant"
+  },
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "http://localhost:8080/*",
+    "*://web.whatsapp.com/*",
+    "*://mail.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["*://web.whatsapp.com/*"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    },
+    {
+      "js": ["emailContent.js"],
+      "matches": ["*://mail.google.com/*"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["*://web.whatsapp.com/*", "*://mail.google.com/*"]
+    }
+  ]
+}
