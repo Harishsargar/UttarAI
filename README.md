@@ -17,7 +17,7 @@
 
 <p float="left">
   <img src="screenshots/gmail_reply.png" width="45%" />
-  <img src="screenshots/whatsapp_reply.png" width="45%" />
+  <img src="screenshots/whatsapp_reply.jpg" width="45%" />
 </p>
 
 > *Left: Smart reply in Gmail | Right: Smart reply in WhatsApp Web*
