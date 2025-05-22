@@ -33,9 +33,3 @@
 
 ---
 
-## 🧪 How to Run Locally
-
-1. Clone this repository
-   ```bash
-   git clone https://github.com/your-username/smart-ai-reply.git
-   cd smart-ai-reply
