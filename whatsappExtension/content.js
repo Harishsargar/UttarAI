@@ -141,8 +141,8 @@ function injectButton(){
             button.disabled = true;
 
             const conversationContext = getConversationContext();
-            // const response = await fetch('http://localhost:8080/api/whatsapp/generate', {
-            const response = await fetch('http://ai-replyer.ap-south-1.elasticbeanstalk.com/api/whatsapp/generate', {
+            const response = await fetch('http://localhost:8080/api/whatsapp/generate', {
+            // const response = await fetch('https://uttarai.onrender.com/api/whatsapp/generate', {
 
                 method: 'POST',
                 headers: {
