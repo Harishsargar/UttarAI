@@ -1,11 +1,21 @@
 .login-form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     margin: 0 auto;
     width: 250px;
+    margin-top: 150px;
+    padding: 30px;
+    background-color: beige;
+    border: 1px solid black;
+    border-radius: 15px;
 }
 
-.form-container{
-    margin-top: 200px;
+.login-form button{
+    text-align: center;
+    margin: auto;
+    border-radius: 7px;
+    width: 70px;
+    height: 30px;
+    margin-top: 5px;
 }
