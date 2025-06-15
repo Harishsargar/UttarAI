@@ -4,8 +4,18 @@
     gap: 15px;
     width: 250px;
     margin: 0 auto;
+    margin-top: 100px;
+    padding: 30px;
+    background-color: beige;
+    border: 1px solid black;
+    border-radius: 15px;
 }
 
-.form-container{
-    margin-top: 150px;
+.register-form  button{
+    text-align: center;
+    margin: auto;
+    border-radius: 7px;
+    width: 70px;
+    height: 30px;
+    margin-top: 5px;
 }

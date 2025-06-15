@@ -2,7 +2,7 @@ import '../../style/registerform.css'
 
 function RegisterForm(){
     return(
-        <div className='form-container'>
+        <div>
             <form className='register-form'>
                 <label>Enter Name</label>
                 <input type="text" required/>
