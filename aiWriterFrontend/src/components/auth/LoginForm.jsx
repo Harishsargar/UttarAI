@@ -4,7 +4,7 @@ function LoginForm(){
 
 return(
     <div className='form-container'>
-        <form>
+        <form className='login-form'>
             <label>Enter Email </label>
             <input type="email" required/>
             <label>Enter Password </label>
