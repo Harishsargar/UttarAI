@@ -12,7 +12,10 @@
     "*://web.whatsapp.com/*",
     "*://mail.google.com/*"
   ],
-  "content_scripts": [
+  "background": {
+      "service_worker": "service-worker.js"
+    },
+  "content_scripts": [  
     {
       "js": ["content.js"],
       "matches": ["*://web.whatsapp.com/*"],
