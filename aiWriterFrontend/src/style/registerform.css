@@ -1,0 +1,11 @@
+.register-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.form-container{
+    margin-top: 150px;
+}
