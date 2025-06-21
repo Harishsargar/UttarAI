@@ -19,28 +19,44 @@ function LoginForm() {
     }));
   };
 
-  const handleSubmit = async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        await loginUser(formData);
-        setMessage("login Successfull");        
+      const response = await loginUser(formData);
+      // Store token in localStorage
+      localStorage.setItem("token", response.data.token);
+      setMessage("login Successfull");
     } catch (err) {
-        console.log(err)
-        setMessage("Login Failed");
+      console.log(err);
+      setMessage("Login Failed");
     }
-  }
+  };
 
   return (
     <div className="form-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <label>Enter Email </label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange}  required />
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
         <label>Enter Password </label>
-        <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+        <input
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
         <button type="submit">submit</button>
         {message && <p>{message}</p>}
       </form>
-      <p>Don't have account <Link to={'/register'}>Register</Link> </p>
+      <p>
+        Don't have account <Link to={"/register"}>Register</Link>{" "}
+      </p>
     </div>
   );
 }
