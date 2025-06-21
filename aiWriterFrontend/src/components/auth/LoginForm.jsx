@@ -1,6 +1,7 @@
 import "../../style/loginform.css";
 import { useState } from "react";
 import { loginUser } from "../../api/auth";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
   const [formData, setFormData] = useState({
@@ -39,6 +40,7 @@ function LoginForm() {
         <button type="submit">submit</button>
         {message && <p>{message}</p>}
       </form>
+      <p>Don't have account <Link to={'/register'}>Register</Link> </p>
     </div>
   );
 }

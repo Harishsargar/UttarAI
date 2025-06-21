@@ -5,8 +5,8 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import Login from './components/Login';
-import { protectedRoutes } from './routes';
+import Home from './components/home';
+import { protectedRoutes, unprotectedRoutes } from './routes';
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem('token');
@@ -20,11 +20,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Public route */}
-        <Route
-          path="/login"
-          element={<Login onLogin={() => (window.location.href = '/dashboard')} />}
-        />
+
+        {/* Unprotected Routes */}
+        {unprotectedRoutes.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
 
 
         {/* Protected routes from config */}
@@ -39,7 +39,7 @@ function App() {
         {/* Fallback */}
         <Route
           path="*"
-          element={<Navigate to={token ? '/dashboard' : '/login'} />}
+          element={<Navigate to={'/home'} />}
         />
       </Routes>
     </Router>

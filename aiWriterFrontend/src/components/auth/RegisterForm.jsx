@@ -1,6 +1,7 @@
 import "../../style/registerform.css";
 import { registerUser } from "../../api/auth";
 import { useState } from "react";
+import { useNavigate,Link } from "react-router-dom";
 
 function RegisterForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ function RegisterForm() {
     confirmPassword: "",
   });
 
+  const navigate = useNavigate();
   const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
@@ -31,9 +33,15 @@ function RegisterForm() {
     try{
         await registerUser(formData);
         setMessage('Registraion Successfull');
+        setTimeout(() => {
+          navigate('/login')
+        }, 1000);
     }catch(err){
         console.log(err);
         setMessage("Registraion Failed");
+         setTimeout(() => {
+          navigate('/login')
+        }, 1000);
     }
   }
 
@@ -105,6 +113,7 @@ function RegisterForm() {
         <button type="submit">Register</button>
         {message && <p>{message}</p>}
       </form>
+      <p>Already have account <Link to={'/login'}>Login</Link> </p>
     </div>
   );
 }
