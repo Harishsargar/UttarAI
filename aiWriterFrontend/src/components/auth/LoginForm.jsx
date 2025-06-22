@@ -1,13 +1,14 @@
 import "../../style/loginform.css";
 import { useState } from "react";
 import { loginUser } from "../../api/auth";
-import { Link } from "react-router-dom";
+import {useNavigate, Link } from "react-router-dom";
 
 function LoginForm() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const [message, setMessage] = useState("");
 
@@ -26,6 +27,9 @@ function LoginForm() {
       // Store token in localStorage
       localStorage.setItem("token", response.data.token);
       setMessage("login Successfull");
+      setTimeout(() => {
+        navigate('/emailReplyer')
+      }, 1000);
     } catch (err) {
       console.log(err);
       setMessage("Login Failed");

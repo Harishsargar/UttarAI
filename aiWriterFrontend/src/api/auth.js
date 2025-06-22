@@ -1,18 +1,19 @@
 import axios from 'axios';
 
-const base_url ="";
+const base_url ="http://localhost:8080/api";
 
 
 //regiester user api call.
 export const registerUser = async (userData) =>{
-    const responce = await axios.post(`${base_url}/register`, userData);
-    return responce.data;   
+    const response = await axios.post(`${base_url}/auth/register`, userData);
+    return response;   
 }
 
 //login user api call.
 export const loginUser = async (credentials) =>{
-    const responce = await axios.post(`${base_url}/login`, credentials);
-    return responce.data;
+    const response = await axios.post(`${base_url}/auth/login`, credentials);
+    console.log(response);
+    return response;
 };
 
 

@@ -1,8 +1,7 @@
 import { useState } from 'react'
 // import './App.css'
 import { Box, Button, CircularProgress, Container, FormControl, Input, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
-import axios from 'axios';
-
+import { emailGenerator } from '../api/generator';
 
 function EmailReplyer(){
   const [emailContent, setEmailContent] = useState('');
@@ -14,11 +13,10 @@ function EmailReplyer(){
   const handleSubmit = async () => {
     setLoading(true);
     setError('');
+    const token = localStorage.getItem("token");
+    console.log('email genereator: ',token)
     try {
-      const response = await axios.post("http://localhost:8080/api/email/generate", {
-       emailContent,
-       tone 
-      });
+      const response = await emailGenerator({emailContent,tone})
       setGeneratedReply(typeof response.data === 'string' ? response.data : JSON.stringify(response.data));
     } catch (error) {
       setError('Failed to generate eamil reply. Please try again');
