@@ -12,6 +12,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.aireplye.aiwriter.service.CustomUserDetailService;
 
@@ -20,6 +21,12 @@ public class SecurityConfig {
 
     @Autowired
     private CustomUserDetailService customUserDetailService;
+
+    @Autowired
+    private JwtAuthenticationEntryPoint point;
+
+    @Autowired
+    private JwtAuthenticationFilter filter;
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
@@ -36,8 +43,10 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/secure/**").authenticated()
-                        .anyRequest().permitAll());
+                        .anyRequest().permitAll())
                 // .authenticationProvider(authenticationProvider());
+                .exceptionHandling(ex -> ex.authenticationEntryPoint(point)) // Handle authentication errors
+                .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class); // Add JWT authentication filter
         return http.build();
     }
 

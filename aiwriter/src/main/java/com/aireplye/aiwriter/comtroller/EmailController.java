@@ -14,7 +14,7 @@ import com.aireplye.aiwriter.dto.EmailRequest;
 import com.aireplye.aiwriter.service.EmailWriterService;
 
 @RestController
-@RequestMapping("/api/email")
+@RequestMapping("/api/secure/email")
 @CrossOrigin(origins = "*")
 public class EmailController {
 
