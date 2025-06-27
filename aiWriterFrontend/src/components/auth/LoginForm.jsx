@@ -24,8 +24,11 @@ function LoginForm() {
     e.preventDefault();
     try {
       const response = await loginUser(formData);
+      const token = response.data.token;
       // Store token in localStorage
-      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("token", token);
+      // Example in JavaScript or TypeScript
+      document.cookie = `jwt=${token}; path=/; max-age=86400`; // 1 day
       setMessage("login Successfull");
       setTimeout(() => {
         navigate('/emailReplyer')

@@ -12,7 +12,7 @@ import com.aireplye.aiwriter.dto.WhatsappRequest;
 import com.aireplye.aiwriter.service.WhatsappWriterService;
 
 @RestController
-@RequestMapping("/api/whatsapp")
+@RequestMapping("/api/secure/whatsapp")
 @CrossOrigin(origins = "*")
 public class WhatsappController {
 

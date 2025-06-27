@@ -6,11 +6,12 @@
   "action": {
     "default_title": "Whatsapp & Mail Reply Assistant"
   },
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage", "activeTab","cookies"],
   "host_permissions": [
     "http://localhost:8080/*",
     "*://web.whatsapp.com/*",
-    "*://mail.google.com/*"
+    "*://mail.google.com/*",
+    "http://localhost:5173/"
   ],
   "background": {
       "service_worker": "service-worker.js"
