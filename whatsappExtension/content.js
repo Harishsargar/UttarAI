@@ -74,6 +74,21 @@ function isTokenExpired(token) {
   }
 }
 
+function setTokenToStorage(token) {
+  return new Promise(resolve => {
+    chrome.storage.local.set({ token }, resolve);
+  });
+}
+
+function getTokenFromStorage() {
+  return new Promise(resolve => {
+    chrome.storage.local.get('token', result => {
+      resolve(result.token);
+    });
+  });
+}
+
+
 function injectButton() {
   console.log("inject button called");
   // alert("inject button called");
@@ -102,7 +117,7 @@ function injectButton() {
       button.disabled = true;
 
       let token;
-      chrome.storage.local.get('token', result => {
+      await chrome.storage.local.get('token', result => {
         token = result.token;
       })
 
@@ -123,25 +138,28 @@ function injectButton() {
         // if found that means users is login and we will store it in the localstorage || in the chrome local storage
         // so we dont have to check in our websites cookies again and again
         // localStorage.setItem('token',jwtResponse.token);
-        chrome.storage.local.set({ token: jwtResponse.token })
+        // await chrome.storage.local.set({ token: jwtResponse.token })
+        await setTokenToStorage(jwtResponse.token )
         // token = localStorage.getItem('token');
-        chrome.storage.local.get('token', result => {
-          token = result.token;
-        })
+        token =await getTokenFromStorage();
+        // await chrome.storage.local.get('token', result => {
+        //   token = result.token;
+        // })
 
       }
 
       //check if token is expire
-      if (isTokenExpired(token)) {
-        // redirect to our website
-        chrome.storage.local.remove('token', () => {
-          alert('token is expire please login again from our website!!');
-        });
-        // localStorage.removeItem('token');   // should remove the old token
-        // alert('token is expire please login again from our website!!')
-      }
+      // if (isTokenExpired(token)) {
+      //   // redirect to our website
+      //   chrome.storage.local.remove('token', () => {
+      //     alert('token is expire please login again from our website!!');
+      //   });
+      // localStorage.removeItem('token');   // should remove the old token
+      // alert('token is expire please login again from our website!!')
+      // }
 
       const conversationContext = getConversationContext();
+
       const response = await fetch('http://localhost:8080/api/secure/whatsapp/generate', {
         // const response = await fetch('https://uttarai.onrender.com/api/whatsapp/generate', {
 
