@@ -64,6 +64,16 @@ function createAIButton() {
   return button;
 }
 
+// checks if the token is expire or not before calling the api.
+function isTokenExpired(token) {
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return Date.now() >= payload.exp * 1000;
+  } catch (e) {
+    return true; // if decoding fails, assume it's bad
+  }
+}
+
 function injectButton() {
   console.log("inject button called");
   // alert("inject button called");
@@ -91,14 +101,44 @@ function injectButton() {
       button.innerHTML = 'Generating...';
       button.disabled = true;
 
-      // 🔁 Get JWT from background
-      const jwtResponse = await new Promise((resolve) => {
-        chrome.runtime.sendMessage({ type: "getJWT" }, resolve);
-      });
+      let token;
+      chrome.storage.local.get('token', result => {
+        token = result.token;
+      })
 
-      if (!jwtResponse.token) {
-        alert('JWT not found. Please login first.');
-        return;
+      //first we will check whether token is present in local storeage or not
+      if (!token) {
+        // 🔁 Get JWT from background
+        const jwtResponse = await new Promise((resolve) => {
+          chrome.runtime.sendMessage({ type: "getJWT" }, resolve);
+        });
+
+        // if token not found in our website this alert will be shown
+        if (!jwtResponse.token) {
+          // should redirect to our website for login....
+          alert('JWT not found. Please login first.');
+          return;
+        }
+
+        // if found that means users is login and we will store it in the localstorage || in the chrome local storage
+        // so we dont have to check in our websites cookies again and again
+        // localStorage.setItem('token',jwtResponse.token);
+        chrome.storage.local.set({ token: jwtResponse.token })
+        // token = localStorage.getItem('token');
+        chrome.storage.local.get('token', result => {
+          token = result.token;
+        })
+
+      }
+
+      //check if token is expire
+      if (isTokenExpired(token)) {
+        // redirect to our website
+        chrome.storage.local.remove('token', () => {
+          alert('token is expire please login again from our website!!');
+        });
+        // localStorage.removeItem('token');   // should remove the old token
+        // alert('token is expire please login again from our website!!')
       }
 
       const conversationContext = getConversationContext();
@@ -108,7 +148,7 @@ function injectButton() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${jwtResponse.token}`
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
           conversation: conversationContext,

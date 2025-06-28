@@ -28,7 +28,7 @@ function LoginForm() {
       // Store token in localStorage
       localStorage.setItem("token", token);
       // Example in JavaScript or TypeScript
-      document.cookie = `jwt=${token}; path=/; max-age=86400`; // 1 day
+      document.cookie = `jwt=${token}; path=/; max-age=3600`; // 1 day
       setMessage("login Successfull");
       setTimeout(() => {
         navigate('/emailReplyer')
