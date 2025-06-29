@@ -34,7 +34,23 @@ document.getElementById('loginbtn').addEventListener("click", async (event) => {
             await chrome.storage.local.set({ token });
             messageS.textContent = "✅ Login successful!";
             setTimeout(() => {
-                window.close();
+                // Find and activate the WhatsApp tab
+                chrome.tabs.query({}, function (tabs) {
+                    const whatsappTab = tabs.find(tab =>
+                        tab.url && tab.url.includes('web.whatsapp.com')
+                    );
+
+                    if (whatsappTab) {
+                        chrome.tabs.update(whatsappTab.id, { active: true }, () => {
+                            // Close this login tab
+                            window.close();
+                        });
+                    } else {
+                        // No WhatsApp tab found, just close
+                        window.close();
+                    }
+                });
+                // window.close();
             }, 500);
         }
     } catch (error) {

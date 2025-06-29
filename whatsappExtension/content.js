@@ -135,13 +135,13 @@ function injectButton() {
         return;
       }
 
-      
-      if(isTokenExpired(token)){
+
+      if (isTokenExpired(token)) {
         await removeTokenFromStorage();
         alert("token is expire, Login in again")
         return;
       }
-      
+
       const conversationContext = getConversationContext();
 
       const response = await fetch('http://localhost:8080/api/secure/whatsapp/generate', {
@@ -174,7 +174,7 @@ function injectButton() {
       }
     } catch (error) {
       console.error(error);
-      alert('Failed to generate reply');
+      alert('Failed to generate reply. Please try reloading WhatsApp or logging in again.');
     } finally {
       button.innerHTML = 'AI Reply';
       button.disabled = false;
