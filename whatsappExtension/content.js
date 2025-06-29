@@ -117,47 +117,13 @@ function injectButton() {
       button.disabled = true;
 
       let token;
-      await chrome.storage.local.get('token', result => {
-        token = result.token;
-      })
+      token =await getTokenFromStorage();
 
       //first we will check whether token is present in local storeage or not
       if (!token) {
-        // 🔁 Get JWT from background
-        const jwtResponse = await new Promise((resolve) => {
-          chrome.runtime.sendMessage({ type: "getJWT" }, resolve);
-        });
-
-        // if token not found in our website this alert will be shown
-        if (!jwtResponse.token) {
-          // should redirect to our website for login....
-          alert('JWT not found. Please login first.');
-          return;
-        }
-
-        // if found that means users is login and we will store it in the localstorage || in the chrome local storage
-        // so we dont have to check in our websites cookies again and again
-        // localStorage.setItem('token',jwtResponse.token);
-        // await chrome.storage.local.set({ token: jwtResponse.token })
-        await setTokenToStorage(jwtResponse.token )
-        // token = localStorage.getItem('token');
-        token =await getTokenFromStorage();
-        // await chrome.storage.local.get('token', result => {
-        //   token = result.token;
-        // })
-
+        alert("You are not logged in Extension please login");
+        return;
       }
-
-      //check if token is expire
-      // if (isTokenExpired(token)) {
-      //   // redirect to our website
-      //   chrome.storage.local.remove('token', () => {
-      //     alert('token is expire please login again from our website!!');
-      //   });
-      // localStorage.removeItem('token');   // should remove the old token
-      // alert('token is expire please login again from our website!!')
-      // }
-
       const conversationContext = getConversationContext();
 
       const response = await fetch('http://localhost:8080/api/secure/whatsapp/generate', {
