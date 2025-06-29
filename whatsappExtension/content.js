@@ -53,13 +53,14 @@ function getConversationContext(count = 10) {
 function createAIButton() {
   const button = document.createElement('button');
   button.className = 'x1c4vz4f x2lah0s xdl72j9 xfect85 x1iy03kw x1lfpgzf';
-  button.style.marginRight = '5px';
-  button.style.marginBottom = '7px';
-  button.style.padding = '11px';
+  button.style.marginLeft = '7px'
+  button.style.marginRight = '0px';
+  button.style.marginBottom = '13px';
+  button.style.padding = '15px';
   button.style.fontSize = '14px';
-  button.style.borderRadius = '8px';
+  button.style.borderRadius = '10px';
   button.innerHTML = 'AI-Reply';
-  button.style.backgroundColor = '#2A3942';
+  button.style.backgroundColor = '#242626';
   // alert("createAIButton called");
   return button;
 }
