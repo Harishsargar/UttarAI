@@ -65,13 +65,16 @@ function createAIButton() {
   return button;
 }
 
-// checks if the token is expire or not before calling the api.
 function isTokenExpired(token) {
+  if (!token) return true;
+
   try {
     const payload = JSON.parse(atob(token.split('.')[1]));
-    return Date.now() >= payload.exp * 1000;
+    const currentTime = Math.floor(Date.now() / 1000); // current time in seconds
+    return payload.exp < currentTime;
   } catch (e) {
-    return true; // if decoding fails, assume it's bad
+    console.error('Invalid token format:', e);
+    return true; // Treat invalid token as expired
   }
 }
 
@@ -86,6 +89,12 @@ function getTokenFromStorage() {
     chrome.storage.local.get('token', result => {
       resolve(result.token);
     });
+  });
+}
+
+function removeTokenFromStorage() {
+  return new Promise(res => {
+    chrome.storage.local.remove('token', res);
   });
 }
 
@@ -118,13 +127,21 @@ function injectButton() {
       button.disabled = true;
 
       let token;
-      token =await getTokenFromStorage();
+      token = await getTokenFromStorage();
 
       //first we will check whether token is present in local storeage or not
       if (!token) {
-        alert("You are not logged in Extension please login");
+        alert("You are not logged in to the Extension. Please log in");
         return;
       }
+
+      
+      if(isTokenExpired(token)){
+        await removeTokenFromStorage();
+        alert("token is expire, Login in again")
+        return;
+      }
+      
       const conversationContext = getConversationContext();
 
       const response = await fetch('http://localhost:8080/api/secure/whatsapp/generate', {

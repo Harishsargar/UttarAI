@@ -58,6 +58,25 @@ function getTokenFromStorage() {
   });
 }
 
+function isTokenExpired(token) {
+  if (!token) return true;
+
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const currentTime = Math.floor(Date.now() / 1000); // current time in seconds
+    return payload.exp < currentTime;
+  } catch (e) {
+    console.error('Invalid token format:', e);
+    return true; // Treat invalid token as expired
+  }
+}
+
+function removeTokenFromStorage() {
+  return new Promise(res => {
+    chrome.storage.local.remove('token', res);
+  });
+}
+
 function injectButton() {
   console.log("injectButton called");
   // alert("injectButton called");
@@ -90,6 +109,11 @@ function injectButton() {
         return;
       }
 
+      if(isTokenExpired(token)){
+        await removeTokenFromStorage();
+        alert("token is expire")
+        return;
+      }
       const emailContent = getEmailContent();
       const response = await fetch('http://localhost:8080/api/secure/email/generate', {
         method: 'POST',
