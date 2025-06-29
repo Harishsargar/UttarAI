@@ -4,9 +4,10 @@
   "version": "1.0",
   "manifest_version": 3,
   "action": {
+    "default_popup": "Defaultpopup.html",
     "default_title": "Whatsapp & Mail Reply Assistant"
   },
-  "permissions": ["storage", "activeTab","cookies"],
+  "permissions": ["storage", "activeTab","cookies","tabs"],
   "host_permissions": [
     "http://localhost:8080/*",
     "*://web.whatsapp.com/*",

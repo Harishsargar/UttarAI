@@ -4,21 +4,25 @@ chrome.runtime.onInstalled.addListener(() => {
   // setPopupBasedOnSignIn();
   chrome.storage.local.get('token', (data) => {
     const popup = data.token ? 'popup.html' : 'popup_sign_in.html';
-    chrome.action.setPopup({ popup });
+    // chrome.action.setPopup({ popup });
   });
 });
 
 chrome.runtime.onStartup.addListener(() => {
   // Reset popup based on saved state on browser restart
   // setPopupBasedOnSignIn();
+    chrome.storage.local.get('token', (data) => {
+    const popup = data.token ? 'popup.html' : 'popup_sign_in.html';
+    // chrome.action.setPopup({ popup });
+  });
 });
 
 chrome.action.onClicked.addListener((tab) => {
   // Popup is already set; no need to change here anymore
-  // chrome.storage.local.get('token', (data) => {
-  //   const popup = data.token ? 'popup.html' : 'popup_sign_in.html';
-  //   chrome.action.setPopup({ popup });
-  // });
+  chrome.storage.local.get('token', (data) => {
+    const popup = data.token ? 'popup.html' : 'popup_sign_in.html';
+    // chrome.action.setPopup({ popup });
+  });
 });
 
 // Helper to set popup dynamically

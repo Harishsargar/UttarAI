@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UttarAI login</title>
+    </head>
+    <body>
+        <form class="login">
+            <h1>Login to the UttarAI</h1>
+            <input id="email" type="email" placeholder="Email" required>
+            <input id="password" type="password" placeholder="Password" required>
+            <button id="loginbtn">Login</button>
+            <span id="msgError"></span>
+            <span id="msgSuccess"></span>
+        </form>
+        <style>
+    .login{
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        gap: 15px;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+
+    .login input, button{
+        height: 25px;
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+
+    #msgError{
+        color: red;
+        text-align: center;
+    }
+    #msgSuccess{
+        color: green;
+        text-align: center;
+    }
+</style>
+        <script src="./login.js"></script>
+    </body>
+</html>
