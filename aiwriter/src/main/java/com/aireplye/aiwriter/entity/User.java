@@ -3,6 +3,7 @@ package com.aireplye.aiwriter.entity;
 import java.util.Collection;
 import java.util.Collections;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -15,6 +16,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Profile("mysql")
 public class User implements UserDetails {
     @Id
     private String id;

@@ -7,8 +7,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.aireplye.aiwriter.dto.RegisterDTO;
-import com.aireplye.aiwriter.entity.User;
-import com.aireplye.aiwriter.repository.UserRepo;
+// import com.aireplye.aiwriter.entity.User;
+// import com.aireplye.aiwriter.repository.UserRepo;
+import com.aireplye.aiwriter.mongoEntity.User;
+import com.aireplye.aiwriter.mongoRepo.UserRepo;
 
 @Service
 public class UserService {

@@ -7,13 +7,16 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.aireplye.aiwriter.entity.User;
-import com.aireplye.aiwriter.repository.UserRepo;
+import com.aireplye.aiwriter.mongoEntity.User;
+// import com.aireplye.aiwriter.entity.User;
+// import com.aireplye.aiwriter.repository.UserRepo;
+import com.aireplye.aiwriter.mongoRepo.UserRepo;
 
 @Service
 public class CustomUserDetailService implements UserDetailsService {
     @Autowired
     private UserRepo userRepo;
+    
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
