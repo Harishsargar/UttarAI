@@ -25,7 +25,7 @@ public class JwtHelper {
     public static final long JWT_TOKEN_VALIDITY = 1 * 60 * 60;
 
      // Load secret key from application.properties
-     @Value("${jwt.secret}")
+     @Value("${jwt.secret}") 
      private String secret;
      
      // Convert Base64-encoded secret into a SecretKey object
