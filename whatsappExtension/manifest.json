@@ -3,9 +3,13 @@
   "description": "AI powered Whatsapp and Mail reply generator",
   "version": "1.0",
   "manifest_version": 3,
+
   "action": {
     "default_popup": "Defaultpopup.html",
-    "default_title": "Whatsapp & Mail Reply Assistant"
+    "default_title": "Whatsapp & Mail Reply Assistant",
+     "default_icon": {
+      "16": "default_icon1.png"
+    }
   },
   "permissions": ["storage", "activeTab","cookies","tabs"],
   "host_permissions": [
