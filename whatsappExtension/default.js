@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     btn.onclick = async () => {
       await chrome.storage.local.remove('token');
       btn.textContent = 'Login';
+      details.textContent = "Please login for using UttarAI"
     };
   } else {
     details.textContent = "Please login for using UttarAI"
