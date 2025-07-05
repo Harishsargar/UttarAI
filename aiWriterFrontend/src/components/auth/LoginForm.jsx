@@ -61,7 +61,7 @@ function LoginForm() {
         <button type="submit">submit</button>
         {message && <p>{message}</p>}
       </form>
-      <p>
+      <p className="register-form-link-msg">
         Don't have account <Link to={"/register"}>Register</Link>{" "}
       </p>
     </div>
