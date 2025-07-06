@@ -33,7 +33,7 @@ function LoginForm() {
       document.cookie = `jwt=${token}; path=/; max-age=3600`; // 1 day
       setMessage("login Successfull");
       setTimeout(() => {
-        navigate("/emailReplyer");
+        navigate("/home");
       }, 1000);
     } catch (err) {
       console.log(err);
