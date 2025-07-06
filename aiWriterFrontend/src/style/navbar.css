@@ -12,6 +12,16 @@
   align-items: center;
 }
 
+.navbar-right-element a{
+    text-decoration: none;
+    color: azure;
+}
+.navbar-right-element a:hover{
+    cursor: pointer;
+    transition-duration: 200ms;
+    color: rgb(248, 27, 189);
+}
+
 .navbar-elements {
   display: flex;
   justify-content: space-between;
@@ -33,6 +43,27 @@
     cursor: pointer;
 }
 
+.navbar-left-element  button:hover{
+    transition-duration: 300ms;
+    background-color: rgb(212, 15, 160);
+    color: rgb(255, 255, 255);
+}
 .navbar-left-element  button:active{
     background-color: rgb(143, 144, 144);
+}
+
+
+.navbar-left-element-link a{
+    text-decoration: none;
+    color: azure;
+}
+
+
+.navbar-left-element-link a:hover{
+    transition-duration: 200ms;
+    color: rgb(248, 27, 189);
+}
+
+.navbar-left-element-link a:active{
+    color: rgba(182, 4, 134, 0.645);
 }

@@ -15,28 +15,27 @@ function Navbar() {
         }
     }, []);
 
-
-
     const handleLogout = () => {
-        
         localStorage.removeItem("token");
         // setMessage("User logout successfully !!");
-        setButtonName("Login")
+        setButtonName("Login");
         navigate("/home");
     };
 
     const handlelogin = () => {
         navigate("/login");
-    }
+    };
     return (
         <div className="navbar-component">
             <div className="navbar-elements">
                 <div className="navbar-right-element">
-                    <img src={navImg} height={25} width={25} />
-                    <h3>Uttar-AI</h3>
+                    <Link to={"/home"}><img src={navImg} height={25} width={25} /></Link>
+                    <h3><Link to={"/home"}>Uttar-AI</Link></h3>
                 </div>
                 <ul className="navbar-left-element">
-                    <li>Email Replyer</li>
+                    <li className="navbar-left-element-link">
+                        <Link to={"/emailReplyer"}>Email Replyer</Link>
+                    </li>
                     {buttonName == "Login" ? (
                         <li>
                             <button onClick={handlelogin}>Login</button>
