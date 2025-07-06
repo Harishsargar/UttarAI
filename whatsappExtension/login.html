@@ -1,44 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>UttarAI login</title>
-    </head>
-    <body>
-        <form class="login">
-            <h1>Login to the UttarAI</h1>
-            <input id="email" type="email" placeholder="Email" required>
-            <input id="password" type="password" placeholder="Password" required>
-            <button id="loginbtn">Login</button>
-            <span id="msgError"></span>
-            <span id="msgSuccess"></span>
-        </form>
-        <style>
-    .login{
-        display: flex;
-        flex-direction: column;
-        width: 20%;
-        gap: 15px;
-        margin: 0 auto;
-        margin-top: 100px;
-    }
 
-    .login input, button{
-        height: 25px;
-        border: 1px solid gray;
-        border-radius: 10px;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet" />
+    <title>UttarAI login</title>
+</head>
 
-    #msgError{
-        color: red;
-        text-align: center;
-    }
-    #msgSuccess{
-        color: green;
-        text-align: center;
-    }
-</style>
-        <script src="./login.js"></script>
-    </body>
+<body>
+    <div class="login-page">
+        <div class="login-left-side">
+            <h4>Welocome to</h4>
+            <h1>उत्तर-AI</h1>
+            <p><span>Uttar-AI</span> is Context-aware, intelligent Reply-Generation platform.</p>
+            <img src="./img5-min.png" height="400px" width="400px">
+        </div>
+        <div class="login-form">
+            <h1 class="login-form-heading">Login Form</h1>
+            <form class="login">
+
+                <label>Enter Email</label>
+                <input id="email" type="email"required>
+                <label>Enter Password</label>
+                <input id="password" type="password" required>
+                <button id="loginbtn">Login</button>
+                <span id="msgError"></span>
+                <span id="msgSuccess"></span>
+            </form>
+        </div>
+    </div>
+    <style>
+        body {
+            background-color: #040f0f;
+        }
+
+        .login-left-side{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: azure;
+            font-family: "Yatra One", system-ui;
+            text-align: center;
+        }
+
+        .login-left-side h1{
+            font-size: 70px;
+            margin: 0px;
+        }
+
+        .login-left-side h4{
+            font-size: 15px;
+            margin: 0;
+            margin-top: 10px;
+        }
+
+        .login-left-side p{
+            font-size: 15px;
+            margin: -15px;
+        }
+
+        .login-left-side p span{
+            color: rgb(219, 8, 135);
+            font-weight: bolder;
+            font-size: 25px;
+            margin: 0px;
+        }
+
+
+        .login-form-heading{
+            color: azure;
+            font-family:'Times New Roman', Times, serif;
+            text-align: center;
+        }
+
+        .login-page {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .login-form {
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            gap: 15px;
+            margin: 0 auto;
+            margin-top: 10px;
+            background-color: #6605b53b;
+            padding: 20px 20px 0px 20px;
+            border-radius: 15px;
+            color: azure;
+            font-size: medium;
+            font-family: "Yatra One", system-ui;
+            border: 2px solid rgb(138, 10, 104);
+        }
+
+        .login input {
+            height: 25px;
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+
+        .login button{
+            width: 70px;
+            text-align: center;
+            margin: auto;
+            border-radius: 5px;
+            height: 25px;
+            font-size: medium;
+            font-family: "Yatra One", system-ui;
+        }
+        #msgError {
+            color: red;
+            text-align: center;
+        }
+
+        #msgSuccess {
+            color: green;
+            text-align: center;
+        }
+    </style>
+    <script src="./login.js"></script>
+</body>
+
 </html>
