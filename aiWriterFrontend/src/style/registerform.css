@@ -22,6 +22,7 @@
 
 .register-form input {
   height: 15px;
+  padding: 0 5px;
   border-radius: 6px;
 }
 .register-form button {
@@ -52,13 +53,23 @@
 }
 
 .left-side-container h1 {
-  font-size: 70px;
+  font-size: 60px;
   font-family: "Yatra One", system-ui;
   color: #f6f6f6;
 }
 
 .left-side-container p {
   font-size: 15px;
+  font-family: "Yatra One", system-ui;
+  color: #f6f6f6;
+  width: 600px;
+  text-align: center;
+}
+
+.left-side-container h4 {
+  /* font-size: 15px; */
+  margin-top: 10px;
+  margin-bottom: -15px;
   font-family: "Yatra One", system-ui;
   color: #f6f6f6;
   width: 600px;

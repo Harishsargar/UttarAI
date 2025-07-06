@@ -2,7 +2,7 @@
   import { registerUser } from "../../api/auth";
   import { useState } from "react";
   import { useNavigate, Link } from "react-router-dom";
-  import img2 from "../../assets/img5.png";
+  import img2 from "../../assets/img5-min.png";
 
   function RegisterForm() {
     const [formData, setFormData] = useState({
@@ -49,8 +49,9 @@
     return (
       <div className="registerform-container">
         <div className="left-side-container">
+          <h4>Welocome to</h4>
           <h1>Uttar-AI</h1>
-          <p>Context-aware, intelligent answer-generation platform.</p>
+          <p>Context-aware, intelligent Reply-Generation platform.</p>
           <img src={img2} height={450} width={450}/>
         </div>
         

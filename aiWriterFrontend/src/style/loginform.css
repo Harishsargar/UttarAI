@@ -4,11 +4,20 @@
     gap: 15px;
     margin: 0 auto;
     width: 250px;
-    margin-top: 150px;
-    padding: 30px;
-    background-color: beige;
-    border: 1px solid black;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #6605b53b;
+    border: 2px solid rgb(138, 10, 104);
     border-radius: 15px;
+    color: azure;
+    font-size: medium;
+  font-family: "Yatra One", system-ui;
+}
+
+.login-form input{
+      height: 25px;
+      padding: 0 10px;
+  border-radius: 6px;
 }
 
 .login-form button{
@@ -22,6 +31,21 @@
 
 .register-form-link-msg{
     text-align: center;
+    color: azure;
+    padding: 10px;
 }
 
+.login-message{
+    text-align: center;
+    color: #dd2d4a;
+}
 
+.login-form-heading{
+    color: azure;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.form-container{
+    margin-right: 80px;
+}
