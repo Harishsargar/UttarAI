@@ -2,6 +2,7 @@ import { useState } from 'react'
 // import './App.css'
 import { Box, Button, CircularProgress, Container, FormControl, Input, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { emailGenerator } from '../api/generator';
+import Navbar from './Navbar';
 
 function EmailReplyer(){
   const [emailContent, setEmailContent] = useState('');
@@ -27,6 +28,8 @@ function EmailReplyer(){
   };
 
   return(
+    <>
+    <Navbar/>
         <Container maxWidth="md" sx={{py:4}}>
       <Typography variant='h3' component="h1" gutterBottom>
         Email Reply Generator
@@ -95,6 +98,7 @@ function EmailReplyer(){
        </Box> 
       )}
     </Container>
+    </>
   )
 }
 

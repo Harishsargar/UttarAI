@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import Hero from "./Hero";
 
 function Home() {
   const [message, setMessage] = useState("");
@@ -13,7 +14,7 @@ function Home() {
   return (
     <>
     <Navbar/>
-      <h1>HOME PAGE</h1>
+    <Hero/>
       {/* <button onClick={handleLogout}>Logout</button>
       <br />
       {message && <p>{message}</p>}

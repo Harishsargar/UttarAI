@@ -1,0 +1,102 @@
+
+
+/* .hero-component{
+    margin: 0 auto;
+} */
+
+.hero-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.hero-main h3{
+    /* color: rgba(240, 255, 255, 0.624); */
+    color: azure;
+    font-family: "Yatra One", system-ui;
+}
+
+.hero-main h1{
+    font-size: 110px;
+    margin-bottom: -10px;
+    margin-top: -10px;
+    font-family: "Yatra One", system-ui;
+}
+
+
+.hero-heading{
+    font-size: 20px;
+    /* color: rgba(240, 255, 255, 0.803); */
+    /* color: rgba(240, 255, 255, 0.825); */
+    color: azure;
+    margin-bottom: 20px;
+    font-family: "Yatra One", system-ui;
+    text-align: center;
+}
+
+.hero-heading span {
+  font-size: 25px;
+  font-family: "Yatra One", system-ui;
+  color: rgb(219, 8, 135);
+}
+
+.hero-subheading{
+    width: 500px;
+    text-align: center;
+    color: rgba(240, 255, 255, 0.624);
+    font-size: 20px;
+    line-height: 25px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.hero-title-span{
+    font-size: 70px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.gmail{
+    color: rgb(240, 93, 105);
+}
+
+.whatsapp{
+    color: rgb(29, 234, 104);
+}
+
+.hero-component{
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.hero-extension{
+    border: 1px solid white;
+    height: 25px;
+    width: 130px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.hero-extension svg{
+    height: 10px;
+    width: 10px;
+}
+
+#puzzle{
+    color: whitesmoke;
+}
+
+.hero-extension:hover{
+    background-color: rgba(229, 230, 230, 0.175);
+    cursor: pointer;
+}

@@ -11,7 +11,7 @@
     border-radius: 15px;
     color: azure;
     font-size: medium;
-  font-family: "Yatra One", system-ui;
+    font-family: "Yatra One", system-ui;
 }
 
 .login-form input{
