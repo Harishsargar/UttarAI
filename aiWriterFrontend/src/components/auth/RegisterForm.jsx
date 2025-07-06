@@ -50,13 +50,13 @@
       <div className="registerform-container">
         <div className="left-side-container">
           <h4>Welocome to</h4>
-          <h1>Uttar-AI</h1>
-          <p>Context-aware, intelligent Reply-Generation platform.</p>
-          <img src={img2} height={450} width={450}/>
+          <h1>उत्तर-AI</h1>
+          <p><span>Uttar-AI</span> is Context-aware, intelligent Reply-Generation platform.</p>
+          <img src={img2} height={400} width={400}/>
         </div>
         
         <div className="registerflex-second-element">
-          <h1 className="register-form-heading">Register Form</h1>
+          <h2 className="register-form-heading">Register Form</h2>
           <form className="register-form" onSubmit={handleSubmit}>
             <label>Enter Name</label>
             <input

@@ -32,7 +32,7 @@ document.getElementById('loginbtn').addEventListener("click", async (event) => {
 
             // Save token in chrome.storage
             await chrome.storage.local.set({ token });
-            messageS.textContent = "✅ Login successful!";
+            messageS.textContent = "Login successful!";
             setTimeout(() => {
                 // Find and activate the WhatsApp tab
                 chrome.tabs.query({}, function (tabs) {
@@ -55,6 +55,6 @@ document.getElementById('loginbtn').addEventListener("click", async (event) => {
         }
     } catch (error) {
         console.error('Login error:', error);
-        alert('❌ Login failed: ' + error.message);
+        alert(' Login failed: ' + error.message);
     }
 })

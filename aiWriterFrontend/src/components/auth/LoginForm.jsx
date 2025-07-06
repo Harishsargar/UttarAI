@@ -45,9 +45,9 @@ function LoginForm() {
     <div className="registerform-container">
       <div className="left-side-container">
         <h4>Welocome to</h4>
-        <h1>Uttar-AI</h1>
-        <p>Context-aware, intelligent Reply-Generation platform.</p>
-        <img src={img2} height={450} width={450} />
+        <h1>उत्तर-AI</h1>
+        <p><span>Uttar-AI</span> is Context-aware, intelligent Reply-Generation platform.</p>
+        <img src={img2} height={400} width={400} />
       </div>
 
       <div className="form-container">

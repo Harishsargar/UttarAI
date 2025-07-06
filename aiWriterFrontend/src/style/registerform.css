@@ -47,15 +47,23 @@
 }
 
 .left-side-container {
+    margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .left-side-container h1 {
-  font-size: 60px;
+  font-size: 65px;
   font-family: "Yatra One", system-ui;
   color: #f6f6f6;
+  margin: 0;
+}
+
+.left-side-container span {
+  font-size: 25px;
+  font-family: "Yatra One", system-ui;
+  color: rgb(219, 8, 135);
 }
 
 .left-side-container p {
@@ -64,11 +72,12 @@
   color: #f6f6f6;
   width: 600px;
   text-align: center;
+  margin: 0;
 }
 
 .left-side-container h4 {
   /* font-size: 15px; */
-  margin-top: 10px;
+  margin: 0px;
   margin-bottom: -15px;
   font-family: "Yatra One", system-ui;
   color: #f6f6f6;

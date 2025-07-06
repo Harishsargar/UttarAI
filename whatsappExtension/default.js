@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       await chrome.storage.local.remove('token');
       btn.textContent = 'Login';
       details.textContent = "Please login for using UttarAI"
+      btn.onclick = () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL('login.html') });
+    };
     };
   } else {
     details.textContent = "Please login for using UttarAI"

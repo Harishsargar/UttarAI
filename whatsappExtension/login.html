@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet" />
+    <link rel="icon" href="./default_icon1.png" type="image/png" />
     <title>UttarAI login</title>
 </head>
 
@@ -30,6 +31,7 @@
                 <span id="msgError"></span>
                 <span id="msgSuccess"></span>
             </form>
+            <p class="registerlink">Don't have an account?  <a target="_blank" href="http://localhost:5173/register">Register</a><br>Register on our wensite and comeback again here to login</p>
         </div>
     </div>
     <style>
@@ -78,6 +80,8 @@
 
         .login-page {
             display: flex;
+            flex-wrap: wrap;
+            align-items: center;
             justify-content: space-around;
         }
 
@@ -128,6 +132,16 @@
         #msgSuccess {
             color: green;
             text-align: center;
+        }
+
+        .registerlink{
+            color: azure;
+            font-family:cursive;
+            font-size: x-small;
+        }
+
+        .registerlink a{
+            color: rgb(199, 3, 147);
         }
     </style>
     <script src="./login.js"></script>
