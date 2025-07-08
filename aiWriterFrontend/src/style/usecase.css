@@ -1,0 +1,73 @@
+.usecase-component{
+    margin-top: 50px;
+}
+
+.usecase-title{
+    font-family: "Yatra One", system-ui;
+    text-align: center;   
+    margin-bottom: 10px;
+    text-decoration: 2px underline solid rgba(174, 5, 112, 0.763);
+    text-underline-offset: 5px;
+}
+
+.usecase-subtitle{
+    text-align: center;  
+     
+}
+
+.usecase-whatsapp{
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.usecase-whatsapp-info{
+    font-family: "Yatra One", system-ui;
+    margin-top: 20px;
+    width: 60%;
+    
+    p{
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+        color: rgba(240, 255, 255, 0.751);
+    }
+    span{
+        color: azure;
+        
+    }
+    
+}
+
+.underline{
+    text-decoration: 1px underline solid rgba(255, 255, 255, 0.925);
+    text-underline-offset: 4px;
+}
+
+.mini-usecase-title{
+
+}
+
+.mini-usecase{
+    padding-top: 15px;
+    color:rgba(240, 255, 255, 0.751); ;
+    padding-left: 50px;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.usecase-subdivison{
+    border: none;
+    border: 1px dashed rgba(240, 255, 255, 0.712);
+    width: 85%;
+    margin: 0 auto;
+    border-image: repeating-linear-gradient(to right, 
+                  rgba(240, 255, 255, 0.414) 1px 21px, 
+                  transparent 1px 30px);
+    border-image-slice: 1;
+}

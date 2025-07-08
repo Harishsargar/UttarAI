@@ -2,7 +2,6 @@
 import "../style/hero.css";
 import robo from "../assets/robo.png"
 import mail from "../assets/mail.png"
-import whatsapp from "../assets/whatsapp.png"
 import chat from "../assets/chat.png"
 import puzzle from "../assets/puzzle.png"
 
