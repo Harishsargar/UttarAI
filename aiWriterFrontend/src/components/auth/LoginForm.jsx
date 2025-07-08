@@ -3,6 +3,7 @@ import { useState } from "react";
 import { loginUser } from "../../api/auth";
 import { useNavigate, Link } from "react-router-dom";
   import img2 from "../../assets/img5-min.png";
+import Navbar from "../Navbar";
 
 
 function LoginForm() {
@@ -42,6 +43,8 @@ function LoginForm() {
   };
 
   return (
+    <>
+    <Navbar/><div style={{ paddingTop: '60px' }}></div>
     <div className="registerform-container">
       <div className="left-side-container">
         <h4>Welocome to</h4>
@@ -77,6 +80,7 @@ function LoginForm() {
         </p>
       </div>
     </div>
+    </>
   );
 }
 

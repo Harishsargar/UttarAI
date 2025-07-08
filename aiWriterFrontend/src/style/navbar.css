@@ -1,3 +1,5 @@
+
+
 .navbar-left-element {
   display: flex;
   justify-content: center;
@@ -66,4 +68,13 @@
 
 .navbar-left-element-link a:active{
     color: rgba(182, 4, 134, 0.645);
+}
+
+.navbar-component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;          /* Ensure full width */
+  z-index: 1000;         /* Keep it above other content */
+  
 }

@@ -29,7 +29,7 @@ function EmailReplyer(){
 
   return(
     <>
-    <Navbar/>
+    <Navbar/><div style={{ paddingTop: '60px' }}></div>
         <Container maxWidth="md" sx={{py:4}}>
       <Typography variant='h3' component="h1" gutterBottom>
         Email Reply Generator

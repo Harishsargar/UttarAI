@@ -15,6 +15,7 @@ function Home() {
   return (
     <>
     <Navbar/>
+    <div style={{ paddingTop: '60px' }}></div>
     <Hero/>
     <Usecase/>
     </>
