@@ -61,6 +61,7 @@ function createAIButton() {
   button.style.borderRadius = '10px';
   button.innerHTML = 'AI-Reply';
   button.style.backgroundColor = '#242626';
+  button.style.color='#FFFFFF'
   // alert("createAIButton called");
   return button;
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
+import Usecase from "./Usecase";
 
 function Home() {
   const [message, setMessage] = useState("");
@@ -15,20 +16,7 @@ function Home() {
     <>
     <Navbar/>
     <Hero/>
-      {/* <button onClick={handleLogout}>Logout</button>
-      <br />
-      {message && <p>{message}</p>}
-      <br />
-      <br />
-      <Link to={"/login"}>
-        <button>Login</button>
-      </Link>
-      <br />
-      <br />
-      <br />
-      <Link to={"/emailReplyer"}>
-        <button>Email Replyer</button>
-      </Link> */}
+    <Usecase/>
     </>
   );
 }

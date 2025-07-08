@@ -56,7 +56,7 @@
 
 }
 .gmail{
-    color: rgb(240, 93, 105);
+    color: #EA4335 ;
 }
 
 .whatsapp{
@@ -92,6 +92,11 @@
     width: 10px;
 }
 
+.hero-buttons a{
+    text-decoration: none;
+    color: azure;
+}
+
 #puzzle{
     color: whitesmoke;
 }
@@ -99,4 +104,11 @@
 .hero-extension:hover{
     background-color: rgba(229, 230, 230, 0.175);
     cursor: pointer;
+}
+
+.section-division{
+    border: none;
+  border-top: 1px solid #b0a0ae89;
+  width: 95%;
+  margin: 0 auto;
 }
