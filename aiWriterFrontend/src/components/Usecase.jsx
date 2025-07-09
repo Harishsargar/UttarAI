@@ -36,10 +36,10 @@ function Usecase(){
                             <ul className="mini-usecase">
                                 <li>Reply to long emails without stressing</li>
                                 <li>Quickly write formal emails that sound professional</li>
-                                <li>Save time and energy — let AI do the typing for you</li>
+                                <li>Save time and energy let AI do the typing for you</li>
                             </ul>
                         </div>
-                    </div><hr className="usecase-subdivison"/>
+                    </div><hr className="section-division"/>
                     
                 </div>
             </div>

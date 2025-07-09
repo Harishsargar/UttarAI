@@ -1,78 +1,102 @@
-.usecase-component{
-    margin-top: 50px;
+.usecase-component {
+  margin-top: 50px;
 }
 
-.usecase-title{
-    font-family: "Yatra One", system-ui;
-    text-align: center;   
-    margin-bottom: 10px;
-    text-decoration: 2px underline solid rgba(174, 5, 112, 0.763);
-    text-underline-offset: 10px;
+.usecase-title {
+  font-family: "Yatra One", system-ui;
+  text-align: center;
+  margin-bottom: 10px;
+  text-decoration: 2px underline solid rgba(174, 5, 112, 0.763);
+  text-underline-offset: 10px;
 }
 
-.usecase-subtitle{
-    text-align: center;  
-     
+.usecase-subtitle {
+  text-align: center;
 }
 
-.usecase-mail-img{
-    padding-top: 50px;
+.usecase-mail-img {
+  padding-top: 50px;
 }
 
-.usecase{
-    margin: 0 auto;
-    width: 90%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+.usecase {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.usecase-info{
-    font-family: "Yatra One", system-ui;
-    margin-top: 20px;
-    margin-bottom: 25px;
-    width: 60%;
-    
-    p{
-        text-align: center;
-        font-size: 20px;
-        line-height: 30px;
-        color: rgba(240, 255, 255, 0.700);
-    }
-    span{
-        color: azure;
-        
-    }
-    
-}
+.usecase-info {
+  font-family: "Yatra One", system-ui;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  width: 60%;
 
-.underline{
-    text-decoration: 1px underline solid rgba(255, 255, 255, 0.925);
-    text-underline-offset: 4px;
-}
-
-.mini-usecase-title{
-
-}
-
-.mini-usecase{
-    padding-top: 15px;
-    color:rgba(240, 255, 255, 0.700); ;
-    padding-left: 50px;
-    line-height: 30px;
+  p {
+    text-align: center;
     font-size: 20px;
+    line-height: 30px;
+    color: rgba(240, 255, 255, 0.7);
+  }
+  span {
+    color: azure;
+  }
 }
 
-.usecase-subdivison{
-    border: none;
-    border: 1px dashed rgba(240, 255, 255, 0.712);
-    width: 85%;
-    margin: 0 auto;
-    border-image: repeating-linear-gradient(to right, 
-                  rgba(240, 255, 255, 0.414) 1px 21px, 
-                  transparent 1px 28px);
-    border-image-slice: 1;
+.underline {
+  text-decoration: 1px underline solid rgba(255, 255, 255, 0.925);
+  text-underline-offset: 4px;
+}
+
+.mini-usecase-title {
+}
+
+.mini-usecase {
+  padding-top: 15px;
+  color: rgba(240, 255, 255, 0.7);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 30px;
+  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  li {
+    border: 2px solid rgba(250, 104, 191, 0.764);
+    color: azure;
+    border-radius: 20px;
+    margin: 10px;
+    margin-bottom: 20px;
+    list-style: none;
+    width: 250px;
+    min-width: 200px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.15s ease;
+    font-size: 18px;
+    /* position: relative; */
+  }
+
+  li:hover {
+    background-color: rgba(242, 69, 251, 0.101);
+    transform: translateY(-4px);
+    border-color: rgb(255, 255, 255);
+    /* transition-duration: 9s; */
+  }
+}
+
+.usecase-subdivison {
+  border: none;
+  border: 1px dashed rgba(240, 255, 255, 0.712);
+  width: 80%;
+  margin: 0 auto;
+  border-image: repeating-linear-gradient(
+    to right,
+    rgba(240, 255, 255, 0.414) 1px 21px,
+    transparent 1px 28px
+  );
+  border-image-slice: 1;
 }
