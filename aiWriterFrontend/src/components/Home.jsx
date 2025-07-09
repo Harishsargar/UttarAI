@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Usecase from "./Usecase";
+import Featuers from "./Featuers";
 
 function Home() {
   const [message, setMessage] = useState("");
@@ -18,6 +19,7 @@ function Home() {
     <div style={{ paddingTop: '60px' }}></div>
     <Hero/>
     <Usecase/>
+    <Featuers/>
     </>
   );
 }
