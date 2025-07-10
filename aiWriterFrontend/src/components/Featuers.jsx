@@ -53,7 +53,7 @@ function Featuers() {
 
                     <div className="feature">
                         <div className="feature-title">
-                            <h3>Custom Tone & Style Settings (Optional/Coming Soon)</h3>
+                            <h3>Custom Tone & Style Settings <br/>( Coming Soon )</h3>
                         </div>
                         <div className="feature-desc">
                             <p>Choose how your replies sound formal, casual, or concise. Tailor the AI to match your communication style.</p>

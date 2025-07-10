@@ -13,5 +13,9 @@ EXPOSE 8080
 # Set environment variable for port (Render expects this)
 ENV PORT=8080
 
+
+# Set Spring profile to prod
+ENV SPRING_PROFILES_ACTIVE=prod
+
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
