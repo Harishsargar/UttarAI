@@ -10,7 +10,7 @@ function Instructions() {
                         <div className="instruction-step">1</div>
                         <div className="inst-desc">
                             <div className="inst-button"><a className="inst-extension" href="/uttar-ai-extension.zip"
-      download><div>Get Extension</div></a>
+                                  download><div>Get Extension</div></a>
                             </div>
                             <p> Download the Uttar-AI Extension and <span>unzip</span> it </p>
                             <p>( currently unavailable on chrome store as it is paid )</p>

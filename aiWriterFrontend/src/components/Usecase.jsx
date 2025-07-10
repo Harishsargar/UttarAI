@@ -1,5 +1,7 @@
 import whatsapp from "../assets/whatsapp.png"
 import mail from "../assets/mail.png"
+import mailext from "../assets/mail-ext.png"
+import whatsappext from "../assets/whatsapp-ext.png"
 import "../style/usecase.css"
 
 function Usecase(){
@@ -24,6 +26,7 @@ function Usecase(){
                         <div className="usecase-whatsapp-img">
                             <img src={whatsapp} height={300} width={300}/>
                         </div>
+                        <img className="whatsapp-realusage" src={whatsappext} height={60} width={500} alt="seamless integration" />
                     </div><hr className="usecase-subdivison"/>
                     <div className="usecase">
                         <div className="usecase-mail-img">
@@ -31,7 +34,7 @@ function Usecase(){
                         </div>
                         <div className="usecase-info">
                             <h2>Gmail</h2><br/>
-                            <p>When you hit "Reply" in Gmail, Uttar AI adds an "AI-Reply" button right inside the reply box. Just click it and it reads the whole email thread, <span className="underline">understands the context and tone</span>, and instantly types out a clear, personalized reply in proper <span className="underline">email format</span>. You can edit it if you want, or just hit send!</p><br/>
+                            <p>When you hit Reply in Gmail, Uttar AI adds an "AI Reply" button right inside the reply box. Just click it and it reads the whole email thread, <span className="underline">understands the context and tone</span>, and instantly types out a clear, personalized reply in proper <span className="underline">email format</span>. You can edit it if you want, or just hit send!</p><br/>
                             <h3 className="mini-usecase-title">How Uttar AI Helps You</h3>
                             <ul className="mini-usecase">
                                 <li>Reply to long emails without stressing</li>
@@ -39,6 +42,7 @@ function Usecase(){
                                 <li>Save time and energy let AI do the typing for you</li>
                             </ul>
                         </div>
+                        <img className="whatsapp-realusage" src={mailext} height={100} width={500} alt="seamless integration" />
                     </div><hr className="section-division"/>
                     
                 </div>

@@ -102,3 +102,8 @@
   );
   border-image-slice: 1;
 }
+
+.whatsapp-realusage{
+  border-radius: 20px;
+  border: 2px solid rgba(245, 245, 245, 0.379);
+}
