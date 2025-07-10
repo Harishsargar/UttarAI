@@ -16,7 +16,7 @@ import lombok.Data;
 
 @Data
 @Document(collection = "users")
-@Profile("mongodb")
+@Profile({"mongodb", "prod"})
 public class User implements UserDetails {
     @Id
     private String id;

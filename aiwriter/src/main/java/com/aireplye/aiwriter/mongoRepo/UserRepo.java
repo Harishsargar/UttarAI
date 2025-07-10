@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.aireplye.aiwriter.mongoEntity.User;
 
 @Repository
-@Profile("mongodb")
+@Profile({"mongodb", "prod"})
 public interface UserRepo extends MongoRepository<User, String> {
     Optional<User> findByEmail(String email);
 
