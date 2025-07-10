@@ -49,9 +49,13 @@
     height: 23px;
     border-radius: 5px;
     text-align: center;
-    padding-top: 2px;
+    padding-top: 4px;
     margin: 10px auto;
     cursor: pointer;
+    a{
+        text-decoration: none;
+        color: azure;
+    }
 }
 
 .inst-desc p{
