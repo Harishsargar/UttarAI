@@ -61,7 +61,7 @@ function Featuers() {
                     </div>
                     
                 </div>
-            </div>
+            </div><hr className="section-division"/>
         </>
     )
 }

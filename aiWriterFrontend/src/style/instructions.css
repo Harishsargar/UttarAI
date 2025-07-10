@@ -1,0 +1,78 @@
+
+
+.instruction-component{
+    margin: 50px;
+}
+
+.instruction-step{
+    height: 40px;
+    width: 40px;
+    border: 1px solid azure;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instruction-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.inst{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    justify-content: start;
+    
+}
+
+.inst-extension {
+  height: 25px;
+  width: 130px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.inst-extension svg {
+  height: 10px;
+  width: 10px;
+}
+
+.inst-button{
+    border: 1px solid white ;
+    width: 130px;
+    height: 23px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 2px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.inst-desc p{
+    text-align: center;
+    font-size: large;
+}
+
+.inst-desc{
+    border: 2px solid rgba(240, 255, 255, 0);
+    padding: 20px;
+    border-radius: 15px;
+
+    span{
+        color: rgb(219, 8, 135);;
+        /* font-size: large; */
+        font-weight: 800;
+    }
+}
+
+.inst-desc:hover{
+    border: 2px solid rgba(240, 255, 255, 0.227);
+    padding: 20px;
+    border-radius: 15px;
+}

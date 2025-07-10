@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Usecase from "./Usecase";
 import Featuers from "./Featuers";
+import Testimonials from "./Testimonials";
+import Instructions from "./Instructions";
 
 function Home() {
   const [message, setMessage] = useState("");
@@ -19,7 +21,10 @@ function Home() {
     <div style={{ paddingTop: '60px' }}></div>
     <Hero/>
     <Usecase/>
+    <Instructions/>
     <Featuers/>
+    
+
     </>
   );
 }
