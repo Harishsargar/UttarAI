@@ -9,7 +9,8 @@ document.getElementById('loginbtn').addEventListener("click", async (event) => {
     try {
 
         if (email && password) {
-            const response = await fetch('http://localhost:8080/api/auth/login', {
+            // const response = await fetch('http://localhost:8080/api/auth/login', {
+            const response = await fetch('https://uttarai-kdfm.onrender.com/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
