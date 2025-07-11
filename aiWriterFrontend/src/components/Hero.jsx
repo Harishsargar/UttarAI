@@ -1,6 +1,6 @@
 
 import "../style/hero.css";
-import robo from "../assets/robo.png"
+import robo from "../assets/robo-min.png"
 import chat from "../assets/chat.png"
 import puzzle from "../assets/puzzle.png"
 

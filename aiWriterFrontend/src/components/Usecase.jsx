@@ -1,4 +1,4 @@
-import whatsapp from "../assets/whatsapp.png"
+import whatsapp from "../assets/whatsapp-min.png"
 import mail from "../assets/mail.png"
 import mailext from "../assets/mail-ext.png"
 import whatsappext from "../assets/whatsapp-ext.png"
