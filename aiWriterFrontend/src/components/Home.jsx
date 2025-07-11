@@ -6,6 +6,7 @@ import Usecase from "./Usecase";
 import Featuers from "./Featuers";
 import Testimonials from "./Testimonials";
 import Instructions from "./Instructions";
+import VedioDemo from "./VedioDemo";
 
 function Home() {
   const [message, setMessage] = useState("");
@@ -23,7 +24,7 @@ function Home() {
     <Usecase/>
     <Instructions/>
     <Featuers/>
-    
+    <VedioDemo/>
 
     </>
   );
