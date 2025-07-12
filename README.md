@@ -33,7 +33,10 @@
 **Backend (AI Reply Engine)**  
 - Spring Boot (Java)
 - REST API for communication
-- AI model (custom logic or integration with LLMs like ChatGPT)
+- AI model
 
 ---
 
+<a href="https://www.youtube.com/watch?v=0Ut9IkTiQDs" target="_blank">
+  <img src="screenshots/website" alt="Harish's Demo" width="300" style="border: 2px solid #ccc; border-radius: 8px;" />
+</a>
