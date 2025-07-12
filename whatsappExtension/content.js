@@ -110,6 +110,9 @@ function injectButton() {
     existingButton.remove();
   }
 
+
+  // get the input field so that we can insert the button with respect to it 
+  // and also inject the ai responce into input field   
   const toolbar = findToolBar();
   if (!toolbar) {
     // alert("Toolbar not found");
