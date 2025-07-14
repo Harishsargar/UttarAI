@@ -7,10 +7,22 @@
 
 .video{
     margin-top: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.417);
+    /* border: 1px solid rgba(255, 255, 255, 0.417); */
     iframe{
         border-radius: 15px;
         font-size: 1px;
     }
     border-radius: 15px;
+}
+
+
+.payment-testing{
+    text-align: center;
+    margin: 50px;
+    button{
+    background-color: aqua;
+    font-size: larger;
+    height :50px;
+    width: 100px;
+    }
 }
