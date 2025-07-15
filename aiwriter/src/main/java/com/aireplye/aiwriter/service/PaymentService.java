@@ -61,7 +61,7 @@ public class PaymentService {
         return order;
     }
 
-    public boolean verifyRazorpayPayment(PaymentDetailsDTO paymentDetailsDTO) throws RazorpayException {
+    public boolean verifyRazorpayPayment(PaymentDetailsDTO paymentDetailsDTO, Principal principal) throws RazorpayException {
         JSONObject paymentDetails = new JSONObject();
         paymentDetails.put("razorpay_signature", paymentDetailsDTO.getRazorpaySignature());
         paymentDetails.put("razorpay_order_id", paymentDetailsDTO.getRazorpayOrderId());
@@ -73,6 +73,11 @@ public class PaymentService {
             razorpayOrder.setStatus("completed");
             razorpayOrder.setPaymentId(paymentDetailsDTO.getRazorpayOrderId());
             razorpayOrderRepo.save(razorpayOrder);
+            User user = userRepo.findByEmail(principal.getName())
+                .orElseThrow(() -> new UsernameNotFoundException("user not fount with username"));
+            user.setCurrentPlan("Basic_Plan");    //for now hard coded later will load the dynamically
+            user.setApiCalls(user.getApiCalls()+200);
+            userRepo.save(user);
             return true;
         } else {
             razorpayOrder.setStatus("failed");
@@ -80,4 +85,9 @@ public class PaymentService {
             return false;
         }
     }
+
+
+    // current plan   (plan name, api calls left)
+
+
 }
