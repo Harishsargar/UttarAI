@@ -34,6 +34,9 @@ function Navbar() {
                 </div>
                 <ul className="navbar-left-element">
                     <li className="navbar-left-element-link">
+                        <Link to={"/pricing"}>View Pricing</Link>
+                    </li>
+                    <li className="navbar-left-element-link">
                         <Link to={"/emailReplyer"}>Email Replyer</Link>
                     </li>
                     {buttonName == "Login" ? (

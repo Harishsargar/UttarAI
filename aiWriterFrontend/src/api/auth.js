@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// const base_url ="http://localhost:8080/api";
-const base_url ="https://uttarai-kdfm.onrender.com/api"; 
+const base_url ="http://localhost:8080/api";
+// const base_url ="https://uttarai-kdfm.onrender.com/api"; 
 
 
 //regiester user api call.

@@ -1,8 +1,10 @@
 package com.aireplye.aiwriter.service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,17 @@ public class UserService {
         user.setGender(registerDTO.getGender());
         user.setName(registerDTO.getName());
         user.setPhoneNumber(registerDTO.getPhoneNumber());
+        user.setApiCalls(25);    // this are the no of calls we are giving for frees
+        return userRepo.save(user);
+    }
+
+
+    public User getUserByUsername(String username){
+        User user = userRepo.findByEmail(username).orElseThrow(()-> new UsernameNotFoundException("user not found :"+username));
+        return user;
+    }
+
+    public User saveUser(User user){
         return userRepo.save(user);
     }
 }

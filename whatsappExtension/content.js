@@ -61,7 +61,7 @@ function createAIButton() {
   button.style.borderRadius = '10px';
   button.innerHTML = 'AI-Reply';
   button.style.backgroundColor = '#242626';
-  button.style.color='#FFFFFF'
+  button.style.color = '#FFFFFF'
   // alert("createAIButton called");
   return button;
 }
@@ -148,8 +148,8 @@ function injectButton() {
 
       const conversationContext = getConversationContext();
 
-      // const response = await fetch('http://localhost:8080/api/secure/whatsapp/generate', {
-        const response = await fetch('https://uttarai-kdfm.onrender.com/api/secure/whatsapp/generate', {
+      const response = await fetch('http://localhost:8080/api/secure/whatsapp/generate', {
+        // const response = await fetch('https://uttarai-kdfm.onrender.com/api/secure/whatsapp/generate', {
 
         method: 'POST',
         headers: {
@@ -162,6 +162,11 @@ function injectButton() {
         })
       });
 
+      if (response.status === 402) {
+        // Handle 402 Payment Required
+        alert("API call limit reached. Please upgrade your plan. Visit the website to upgrade your plan");
+        return;
+      }
       if (!response.ok) {
         throw new Error('API Request Failed');
       }
