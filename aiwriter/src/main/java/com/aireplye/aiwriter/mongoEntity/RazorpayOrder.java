@@ -3,8 +3,7 @@ package com.aireplye.aiwriter.mongoEntity;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import org.springframework.data.annotation.Id;
 import lombok.Data;
 
 @Data

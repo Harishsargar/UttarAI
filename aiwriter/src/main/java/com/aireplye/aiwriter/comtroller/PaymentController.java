@@ -38,7 +38,7 @@ public class PaymentController {
     @PostMapping("/verifypayment")
     public ResponseEntity<?> verifyPayment(@RequestBody PaymentDetailsDTO paymentDetailsDTO) throws RazorpayException{
         System.out.println("verify payment called");
-        System.out.println(paymentDetailsDTO);
+        // System.out.println(paymentDetailsDTO);
         if(paymentService.verifyRazorpayPayment(paymentDetailsDTO)){
             return new ResponseEntity<>(HttpStatus.ACCEPTED);
         }else{
