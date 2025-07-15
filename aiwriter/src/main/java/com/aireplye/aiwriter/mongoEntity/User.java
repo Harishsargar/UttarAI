@@ -29,8 +29,7 @@ public class User implements UserDetails {
     private String gender;
     private String password;
     private int apiCalls;
-    private String orderId;
-
+    private String currentPlan;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // theirs no role in this project 

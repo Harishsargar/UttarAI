@@ -16,3 +16,20 @@ export const createOrder = async (body) => {
     console.log(response);
     return response;
 }
+
+
+//verify payment at backend
+export const verifyPayment = async (body) => {
+    const token = localStorage.getItem('token');
+    const headers = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+    }
+    const response = await axios.post(`${base_url}/payment/verifypayment`, body, headers);
+    console.log(response);
+    return response;
+}
+
+
