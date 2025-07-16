@@ -2,6 +2,7 @@ import { useState } from 'react'
 // import './App.css'
 import { Box, Button, CircularProgress, Container, FormControl, Input, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { emailGenerator } from '../api/generator';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from './Navbar';
 
 function EmailReplyer(){
@@ -10,6 +11,12 @@ function EmailReplyer(){
   const [generatedReply, setGeneratedReply] = useState(''); 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -30,6 +37,7 @@ function EmailReplyer(){
   return(
     <>
     <Navbar/><div style={{ paddingTop: '60px' }}></div>
+    <ThemeProvider theme={darkTheme}>
         <Container maxWidth="md" sx={{py:4}}>
       <Typography variant='h3' component="h1" gutterBottom>
         Email Reply Generator
@@ -44,7 +52,7 @@ function EmailReplyer(){
           label="Original Email Content"
           value={emailContent || ''}
           onChange={(e) => setEmailContent(e.target.value)}
-          sx={{ mb:2 }}/>
+          sx={{ mb:2}}/>
 
           <FormControl fullWidth sx={{ mb:2 }}>
             <InputLabel>Tone (Optional)</InputLabel>
@@ -98,6 +106,7 @@ function EmailReplyer(){
        </Box> 
       )}
     </Container>
+    </ThemeProvider>
     </>
   )
 }
