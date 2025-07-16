@@ -45,6 +45,9 @@ public class EmailController {
             userService.saveUser(user);
             return ResponseEntity.ok(generatedEmail);
         }else{
+            user.setCurrentPlan(null);
+            user.setApiCalls(0);
+            userService.saveUser(user);
             return new ResponseEntity<>("API limit reached. Please upgrade your plan.",HttpStatus.PAYMENT_REQUIRED);
         }
         // this is the paid service so we are using gemini for now

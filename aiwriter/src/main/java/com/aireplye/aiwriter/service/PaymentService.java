@@ -96,6 +96,4 @@ public class PaymentService {
         currentPlan.setCurrentPlanName(user.getCurrentPlan());
         return currentPlan;
     }
-
-
 }

@@ -16,8 +16,8 @@ const Pricing = () => {
     const fetchPlan = async () => {
         try {
             const response = await fetchCurrentPlan();
-            setCurrentPlan(response?.data?.plan);
-            setApiCallsLeft(response?.data?.apiCallsLeft + " Api Calls left");
+            setCurrentPlan(response?.data?.currentPlanName);
+            setApiCallsLeft(response?.data?.apiCallsLeft + " Calls left");
         } catch (error) {
             console.error("Error fetching current plan:", error);
         }
@@ -143,10 +143,10 @@ const Pricing = () => {
         <>
             <Navbar /><div style={{ paddingTop: '60px' }}></div>
 
-            <div>
+            <div className="plandetails">
                 <div className="currentplan">
-                    <h3>Current Active Plan : <span>{currentPlan}</span> </h3>
-                    <h3>Api Calls Left : <span>{apiCallsLeft}</span></h3>
+                    <h4>Current Active Plan : <span>{currentPlan}</span> </h4>
+                    <h4>Api Calls Left : <span>{apiCallsLeft}</span></h4>
                 </div>
             </div>
 

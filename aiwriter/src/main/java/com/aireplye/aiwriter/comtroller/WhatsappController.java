@@ -44,6 +44,9 @@ public class WhatsappController {
             userService.saveUser(user);
             return ResponseEntity.ok(generatedMessage);
         }else{
+            user.setCurrentPlan(null);
+            user.setApiCalls(0);
+            userService.saveUser(user);
             return new ResponseEntity<>("API limit reached. Please upgrade your plan.",HttpStatus.PAYMENT_REQUIRED);
         }
         
