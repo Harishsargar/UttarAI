@@ -44,4 +44,11 @@
   </a>
 </p>
 
+<h2 align="center"> Payment Gateway Integration</h2>
+<p align="center">
+  <a href="https://youtu.be/zUCGtyE4uKg" target="_blank">
+    <img src="screenshots/payment_youtube.png" alt="Harish's Demo" width="600" style="border: 2px solid #ccc; border-radius: 8px;" />
+  </a>
+</p>
+
 ---
