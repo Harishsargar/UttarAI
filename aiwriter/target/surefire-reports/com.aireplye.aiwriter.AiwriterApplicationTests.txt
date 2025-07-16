@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.aireplye.aiwriter.AiwriterApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.299 s -- in com.aireplye.aiwriter.AiwriterApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.975 s -- in com.aireplye.aiwriter.AiwriterApplicationTests
