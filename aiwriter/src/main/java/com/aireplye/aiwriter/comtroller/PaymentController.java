@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.aireplye.aiwriter.dto.CurrentPlan;
 import com.aireplye.aiwriter.dto.OrderRequestDTO;
 import com.aireplye.aiwriter.dto.PaymentDetailsDTO;
 import com.aireplye.aiwriter.service.PaymentService;
@@ -45,5 +47,12 @@ public class PaymentController {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
         
+    }
+
+    // fetch the current plan and the api calls left
+    @GetMapping("/currentplan")
+    public ResponseEntity<?> currentplan(Principal principal){
+        CurrentPlan currentPlan = paymentService.fetchCurrentPlan(principal);
+        return new ResponseEntity<>(currentPlan, HttpStatus.OK);
     }
 }

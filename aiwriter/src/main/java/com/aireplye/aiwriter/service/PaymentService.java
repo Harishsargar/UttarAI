@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.aireplye.aiwriter.dto.CurrentPlan;
 import com.aireplye.aiwriter.dto.OrderRequestDTO;
 import com.aireplye.aiwriter.dto.PaymentDetailsDTO;
 import com.aireplye.aiwriter.mongoEntity.RazorpayOrder;
@@ -88,6 +89,13 @@ public class PaymentService {
 
 
     // current plan   (plan name, api calls left)
+    public CurrentPlan fetchCurrentPlan(Principal principal){
+        User user = userRepo.findByEmail(principal.getName()).orElseThrow(()-> new UsernameNotFoundException("user not found "+ principal.getName()));
+        CurrentPlan currentPlan = new CurrentPlan();
+        currentPlan.setApiCallsLeft(String.valueOf(user.getApiCalls()));
+        currentPlan.setCurrentPlanName(user.getCurrentPlan());
+        return currentPlan;
+    }
 
 
 }
