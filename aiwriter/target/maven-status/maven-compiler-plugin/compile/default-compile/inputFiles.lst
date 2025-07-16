@@ -3,6 +3,7 @@ C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\jav
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\comtroller\GlobalExceptionHandler.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\comtroller\Home.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\comtroller\LoginController.java
+C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\comtroller\PaymentController.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\comtroller\RegisterController.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\comtroller\WhatsappController.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\config\JwtAuthenticationEntryPoint.java
@@ -13,13 +14,19 @@ C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\jav
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\dto\EmailRequest.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\dto\LoginDTO.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\dto\MessageRequest.java
+C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\dto\OrderRequestDTO.java
+C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\dto\PaymentDetailsDTO.java
+C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\dto\RazorpayOrderDTO.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\dto\RegisterDTO.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\dto\WhatsappRequest.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\entity\User.java
+C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\mongoEntity\RazorpayOrder.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\mongoEntity\User.java
+C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\mongoRepo\RazorpayOrderRepo.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\mongoRepo\UserRepo.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\repository\UserRepo.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\service\CustomUserDetailService.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\service\EmailWriterService.java
+C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\service\PaymentService.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\service\UserService.java
 C:\Users\Harish\OneDrive\Desktop\self\spring\ai_assistance\aiwriter\src\main\java\com\aireplye\aiwriter\service\WhatsappWriterService.java
