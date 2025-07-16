@@ -35,6 +35,7 @@ public class UserService {
         user.setGender(registerDTO.getGender());
         user.setName(registerDTO.getName());
         user.setPhoneNumber(registerDTO.getPhoneNumber());
+        user.setCurrentPlan("Free_Tier");
         user.setApiCalls(25);    // this are the no of calls we are giving for frees
         return userRepo.save(user);
     }
