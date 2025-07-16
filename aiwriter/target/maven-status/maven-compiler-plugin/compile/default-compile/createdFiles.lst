@@ -12,6 +12,7 @@ com\aireplye\aiwriter\dto\EmailRequest.class
 com\aireplye\aiwriter\comtroller\Home.class
 com\aireplye\aiwriter\service\WhatsappWriterService.class
 com\aireplye\aiwriter\comtroller\RegisterController.class
+com\aireplye\aiwriter\dto\CurrentPlan.class
 com\aireplye\aiwriter\dto\OrderRequestDTO.class
 com\aireplye\aiwriter\mongoEntity\RazorpayOrder.class
 com\aireplye\aiwriter\comtroller\GlobalExceptionHandler.class
