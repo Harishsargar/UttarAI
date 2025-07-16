@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const base_url = 'http://localhost:8080/api/secure';
-const base_url = 'https://uttarai-kdfm.onrender.com/api/secure';
+const base_url = 'http://localhost:8080/api/secure';
+// const base_url = 'https://uttarai-kdfm.onrender.com/api/secure';
 
 // email generator
 export const emailGenerator = async (body) => {

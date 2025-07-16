@@ -1,13 +1,32 @@
 import "../style/pricing.css"
 import { useNavigate, Link } from "react-router-dom";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from "./Navbar";
-import { createOrder, verifyPayment } from "../api/payment";
+import { createOrder, fetchCurrentPlan, verifyPayment } from "../api/payment";
 // import './Pricing.css'; // Optional external CSS if you're not using Tailwind
 
 const Pricing = () => {
 
     const navigate = useNavigate();
+    const [currentPlan, setCurrentPlan] = useState("No Data");
+    const [apiCallsLeft, setApiCallsLeft] = useState("No Data");
+
+
+
+    const fetchPlan = async () => {
+        try {
+            const response = await fetchCurrentPlan();
+            setCurrentPlan(response?.data?.plan);
+            setApiCallsLeft(response?.data?.apiCallsLeft + " Api Calls left");
+        } catch (error) {
+            console.error("Error fetching current plan:", error);
+        }
+    };
+
+    useEffect(() => {
+        fetchPlan();
+    }, []);
+
 
     const plans = [
         {
@@ -106,13 +125,14 @@ const Pricing = () => {
             const razorpaySignature = razorpay_signature;
             const response = await verifyPayment({ razorpayPaymentId, razorpayOrderId, razorpaySignature });
             if (response.status == 202) {
+                fetchPlan();
                 alert("Payment SuccessFull");
-            } else if(response.status== 406){
+            } else if (response.status == 406) {
                 alert("payment Not Done\nIf money debited will be creadited back in 3-4 days")
-            }else{
+            } else {
                 alert("Something went wrong\n If money debited will be creadited back in 3-4 days")
             }
-            } catch (error) {
+        } catch (error) {
             // if error at verifying send alert "their was error while cpturing your payment on our serer"
             alert("Error While Proccessing Payment\n If money debited will be creadited back in 3-4 days")
         }
@@ -122,17 +142,25 @@ const Pricing = () => {
     return (
         <>
             <Navbar /><div style={{ paddingTop: '60px' }}></div>
-            <div className="pricing grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+
+            <div>
+                <div className="currentplan">
+                    <h3>Current Active Plan : <span>{currentPlan}</span> </h3>
+                    <h3>Api Calls Left : <span>{apiCallsLeft}</span></h3>
+                </div>
+            </div>
+
+            <div className="pricing">
                 {plans.map((plan, index) => (
-                    <div key={index} className="pricingcard border rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
-                        <h2 className="cardheading text-xl font-bold mb-2">{plan.name}</h2>
-                        <h1 className="text-3xl font-semibold text-green-600 mb-4">₹ {plan.price}</h1>
-                        <ul className="mb-4 list-disc list-inside"><br />
+                    <div key={index} className="pricingcard ">
+                        <h6 className="cardheading">{plan.name}</h6>
+                        <h1>₹ {plan.price}</h1>
+                        <ul><br />
                             {plan.features.map((feature, idx) => (
-                                <li key={idx} className="text-gray-700">{feature}</li>
+                                <li key={idx} >{feature}</li>
                             ))}
                         </ul>
-                        <button onClick={handlePayment} className="bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition">
+                        <button onClick={handlePayment}>
                             Choose Plan
                         </button>
                     </div>

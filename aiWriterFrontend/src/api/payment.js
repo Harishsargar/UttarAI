@@ -33,3 +33,16 @@ export const verifyPayment = async (body) => {
 }
 
 
+//fetch current plan
+export const fetchCurrentPlan = async () => {
+    const token = localStorage.getItem('token');
+    const headers = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+    }
+    const response = await axios.get(`${base_url}/payment/currentplan`, headers);
+    console.log(response);
+    return response;
+}
