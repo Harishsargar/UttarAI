@@ -115,7 +115,8 @@ function injectButton() {
         return;
       }
       const emailContent = getEmailContent();
-      const response = await fetch('http://localhost:8080/api/secure/email/generate', {
+      // const response = await fetch('http://localhost:8080/api/secure/email/generate', {
+        const response = await fetch('https://uttarai-kdfm.onrender.com/api/secure/email/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -126,7 +127,11 @@ function injectButton() {
           tone: "professional"
         })
       });
-
+      if (response.status === 402) {
+        // Handle 402 Payment Required
+        alert("API call limit reached. Please upgrade your plan. Visit the website to upgrade your plan");
+        return;
+      }
       if (!response.ok) {
         throw new Error('API Request Failed');
       }
