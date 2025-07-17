@@ -67,7 +67,7 @@
   li {
     border: 2px solid rgba(250, 104, 191, 0.764);
     color: azure;
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 10px;
     margin-bottom: 20px;
     list-style: none;
@@ -85,7 +85,7 @@
     background-color: rgba(242, 69, 251, 0.101);
     transform: translateY(-4px);
     border-color: rgb(255, 255, 255);
-    box-shadow: 5px 5px 15px rgba(251, 241, 246, 0.655);
+    box-shadow: 3px 3px 10px rgba(251, 241, 246, 0.655);
     /* transition-duration: 9s; */
   }
 }
@@ -104,6 +104,6 @@
 }
 
 .whatsapp-realusage{
-  border-radius: 20px;
-  border: 2px solid rgba(245, 245, 245, 0.379);
+  border-radius: 5px;
+  border: 1px solid rgba(245, 245, 245, 0.379);
 }

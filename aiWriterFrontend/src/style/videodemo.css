@@ -1,6 +1,14 @@
 .video-component{
     margin: 50px auto;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* gap: 5px; */
+    justify-content: space-evenly;
+}
+
+.video-div{
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -9,10 +17,10 @@
     margin-top: 30px;
     /* border: 1px solid rgba(255, 255, 255, 0.417); */
     iframe{
-        border-radius: 15px;
+        border-radius: 10px;
         font-size: 1px;
     }
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 

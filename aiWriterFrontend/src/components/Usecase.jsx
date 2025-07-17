@@ -1,7 +1,7 @@
 import whatsapp from "../assets/whatsapp-min.png"
 import mail from "../assets/mail.png"
-import mailext from "../assets/mail-ext.png"
-import whatsappext from "../assets/whatsapp-ext.png"
+import mailext from "../assets/gmail_working.png"
+import whatsappext from "../assets/whatsapp_working.png"
 import "../style/usecase.css"
 
 function Usecase(){
@@ -26,7 +26,7 @@ function Usecase(){
                         <div className="usecase-whatsapp-img">
                             <img src={whatsapp} height={300} width={300}/>
                         </div>
-                        <img className="whatsapp-realusage" src={whatsappext} height={60} width={500} alt="seamless integration" />
+                        <img className="whatsapp-realusage" src={whatsappext} height={200} width={500} alt="seamless integration" />
                     </div><hr className="usecase-subdivison"/>
                     <div className="usecase">
                         <div className="usecase-mail-img">
@@ -42,7 +42,7 @@ function Usecase(){
                                 <li>Save time and energy let AI do the typing for you</li>
                             </ul>
                         </div>
-                        <img className="whatsapp-realusage" src={mailext} height={100} width={500} alt="seamless integration" />
+                        <img className="whatsapp-realusage" src={mailext} height={400} width={780} alt="seamless integration" />
                     </div><hr className="section-division"/>
                     
                 </div>

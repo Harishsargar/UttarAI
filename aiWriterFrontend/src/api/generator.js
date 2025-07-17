@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { BASE_URL } from './baseURL';
 
 // const base_url = 'http://localhost:8080/api/secure';
-const base_url = 'https://uttarai-kdfm.onrender.com/api/secure';
+// const base_url = 'https://uttarai-kdfm.onrender.com/api/secure';
 
 
 function isTokenExpired(token) {
@@ -37,6 +38,6 @@ export const emailGenerator = async (body) => {
             'Content-Type': 'application/json'
         }
     }
-    const response = await axios.post(`${base_url}/email/generate`, body, headers);
+    const response = await axios.post(`${BASE_URL}/email/generate`, body, headers);
     return response;
 }

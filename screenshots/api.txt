@@ -1,0 +1,6 @@
+1. Frontend / baseURL.jd  -> true for prod  |   false for localhost 
+
+4. Extenseion / content.js  -> one api
+5. Extenseion / emailContent.js -> one api
+6. Extenseion / login.html  -> one api 
+7. Extenseion / login.js  -> one api 
