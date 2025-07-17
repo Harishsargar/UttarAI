@@ -65,7 +65,7 @@ Defines metadata and permissions for the extension:
 <h2 align="center"> Project Demonstration</h2>
 <p align="center">
   <a href="https://www.youtube.com/watch?v=0Ut9IkTiQDs" target="_blank">
-    <img src="screenshots/website.png" alt="Harish's Demo" width="600" style="border: 2px solid #ccc; border-radius: 8px;" />
+    <img src="projectdocs/website.png" alt="Harish's Demo" width="600" style="border: 2px solid #ccc; border-radius: 8px;" />
   </a>
 </p>
 
@@ -117,7 +117,7 @@ Defines metadata and permissions for the extension:
 <h2 align="center"> Payment Gateway Integration</h2>
 <p align="center">
   <a href="https://youtu.be/zUCGtyE4uKg" target="_blank">
-    <img src="screenshots/payment_youtube.png" alt="Harish's Demo" width="600" style="border: 2px solid #ccc; border-radius: 8px;" />
+    <img src="projectdocs/payment_youtube.png" alt="Harish's Demo" width="600" style="border: 2px solid #ccc; border-radius: 8px;" />
   </a>
 </p>
 
