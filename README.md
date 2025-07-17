@@ -44,6 +44,18 @@ Defines metadata and permissions for the extension:
 - Identifies and stores toolbar element (input area).
 - Calls `createButton()` to insert a custom AI button that matches WhatsApp's theme.
 
+<h2 align="center">Whatsapp Working</h2>
+<table align="center">
+  <tr>
+    <td>
+      <img src="projectdocs/whatsapp_reply.jpg" alt="Harish's Demo 1" width="400"/>
+    </td>
+    <td>
+      <img src="projectdocs/whatsapp_working.png" alt="Harish's Demo 2" width="400"/>
+    </td>
+  </tr>
+</table>
+
 #### 🧠 Generating Conversation Context
 
 - Captures the **last 10 messages** from the DOM using `querySelectorAll()`.
@@ -56,6 +68,18 @@ Defines metadata and permissions for the extension:
 ---
 
 ### c. Gmail Integration
+
+<h2 align="center">Gmail Working</h2>
+<table align="center">
+  <tr>
+    <td>
+      <img src="projectdocs/gmail_reply.png" alt="Harish's Demo 1" width="400"/>
+    </td>
+    <td>
+      <img src="projectdocs/gmail_working.png" alt="Harish's Demo 2" width="400"/>
+    </td>
+  </tr>
+</table>
 
 - Similar to WhatsApp, but only the **current email content** is captured.
 - Sends this to the backend for response generation.
