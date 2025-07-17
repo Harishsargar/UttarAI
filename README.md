@@ -107,6 +107,12 @@ Defines metadata and permissions for the extension:
 - Displays **View Pricing** section with available plans.
 - On plan selection, sends selected plan details to the backend API.
 
+<h2 align="center"> View Pricing</h2>
+<p align="center">
+    <img src="projectdocs/view_pricing.png" alt="Harish's Demo" width="600" style="border: 2px solid #ccc; border-radius: 8px;" />
+</p>
+
+
 ### c. Backend Workflow
 
 - Fetches plan details from the database.
@@ -119,6 +125,11 @@ Defines metadata and permissions for the extension:
 - Razorpay script is embedded in `index.html`.
 - `Razorpay.Options` object is configured and invoked.
 - Razorpay pop-up is triggered for payment.
+
+ <h2 align="center">Razorpay Pop-up</h2>
+<p align="center">
+    <img src="projectdocs/Screenshot 2025-07-16 202335.png" alt="Harish's Demo" width="600" style="border: 2px solid #ccc; border-radius: 8px;" />
+</p>
 
 ### e. Handling Payment Responses
 
