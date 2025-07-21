@@ -218,7 +218,7 @@ Defines metadata and permissions for the extension:
 
 > ⚠️ **All payments are currently in test mode.**  
 > No real money is involved.  
-> You can complete the entire payment process using **dummy/test credentials** provided by Razorpay.  
+> You can complete the entire payment process using **dummy/test credentials**.  
 > Your API call quota will be updated based on the selected plan.
 
 ---
