@@ -2,6 +2,7 @@
     margin: 50px auto;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     /* gap: 5px; */
     justify-content: space-evenly;

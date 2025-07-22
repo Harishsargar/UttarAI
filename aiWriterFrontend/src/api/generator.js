@@ -19,9 +19,8 @@ function isTokenExpired(token) {
 }
 
 function removeTokenFromStorage() {
-  return new Promise(res => {
-    chrome.storage.local.remove('token', res);
-  });
+  return Promise.resolve(localStorage.removeItem('token'));
+  
 }
 
 // email generator
@@ -38,6 +37,6 @@ export const emailGenerator = async (body) => {
             'Content-Type': 'application/json'
         }
     }
-    const response = await axios.post(`${BASE_URL}/email/generate`, body, headers);
+    const response = await axios.post(`${BASE_URL}/secure/email/generate`, body, headers);
     return response;
 }
