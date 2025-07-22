@@ -204,7 +204,10 @@ const observer = new MutationObserver((mutations) => {
       (node.matches('._ak1r') || node.querySelector('._ak1r'))
     );
     if (hasComposeElement) {
-      setTimeout(injectButton, 500)
+      setTimeout(() => {
+        injectButton();
+          // Will only start once
+      }, 500);
     }
   }
 });
@@ -213,3 +216,25 @@ observer.observe(document.body, {
   childList: true,
   subtree: true
 })
+
+
+// to ping the backend to spin the instance 
+let backendPingStarted = false;
+pingBackendEvery10Minutes();
+
+function pingBackendEvery10Minutes() {
+  if (backendPingStarted) return;
+  backendPingStarted = true;
+
+  // Call once immediately
+  fetch("http://localhost:8080/api/ping/isbackendup")
+    .then(() => console.log("Initial backend ping sent"))
+    .catch((err) => console.error("Initial ping failed", err));
+
+  // Then every 10 minutes
+  setInterval(() => {
+    fetch("http://localhost:8080/api/ping/isbackendup")
+      .then(() => console.log("Backend ping sent"))
+      .catch((err) => console.error("Ping failed", err));
+  }, 10 * 60 * 1000);
+}

@@ -14,6 +14,7 @@ public class PingController {
 
     @GetMapping("/isbackendup")
     public ResponseEntity<String> isBackendUp(){
+        System.out.println("ping Backend called.........");
         return new ResponseEntity<>("Uttar-AI Backend is running",HttpStatus.OK);
     }
 }
