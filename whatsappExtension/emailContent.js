@@ -193,13 +193,15 @@ function pingBackendEvery10Minutes() {
   backendPingStarted = true;
 
   // Call once immediately
-  fetch("http://localhost:8080/api/ping/isbackendup")
+  fetch("https://uttarai-kdfm.onrender.com/api/ping/isbackendup")       // for production
+  // fetch("http://localhost:8080/api/ping/isbackendup")                   // for development
     .then(() => console.log("Initial backend ping sent"))
     .catch((err) => console.error("Initial ping failed", err));
 
   // Then every 10 minutes
   setInterval(() => {
-    fetch("http://localhost:8080/api/ping/isbackendup")
+    ffetch("https://uttarai-kdfm.onrender.com/api/ping/isbackendup")       // for production
+    // fetch("http://localhost:8080/api/ping/isbackendup")                   // for development
       .then(() => console.log("Backend ping sent"))
       .catch((err) => console.error("Ping failed", err));
   }, 10 * 60 * 1000);
