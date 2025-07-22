@@ -13,7 +13,7 @@ export const createOrder = async (body) => {
             'Content-Type': 'application/json'
         }
     }
-    const response = await axios.post(`${BASE_URL}/payment/createorder`, body, headers);
+    const response = await axios.post(`${BASE_URL}/secure/payment/createorder`, body, headers);
     console.log(response);
     return response;
 }
@@ -28,7 +28,7 @@ export const verifyPayment = async (body) => {
             'Content-Type': 'application/json'
         }
     }
-    const response = await axios.post(`${BASE_URL}/payment/verifypayment`, body, headers);
+    const response = await axios.post(`${BASE_URL}/secure/payment/verifypayment`, body, headers);
     console.log(response);
     return response;
 }
@@ -43,7 +43,7 @@ export const fetchCurrentPlan = async () => {
             'Content-Type': 'application/json'
         }
     }
-    const response = await axios.get(`${base_url}/payment/currentplan`, headers);
+    const response = await axios.get(`${BASE_URL}/secure/payment/currentplan`, headers);
     console.log(response);
     return response;
 }

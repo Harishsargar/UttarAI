@@ -1,5 +1,5 @@
 // Toggle this value manually based on the environment
-const isProd = true; // Set to false for local development
+const isProd = false; // Set to false for local development
 
 // Base URLs
 const PROD_URL = "https://uttarai-kdfm.onrender.com/api";

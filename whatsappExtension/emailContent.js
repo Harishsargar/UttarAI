@@ -115,8 +115,8 @@ function injectButton() {
         return;
       }
       const emailContent = getEmailContent();
-      // const response = await fetch('http://localhost:8080/api/secure/email/generate', {
-        const response = await fetch('https://uttarai-kdfm.onrender.com/api/secure/email/generate', {
+      const response = await fetch('http://localhost:8080/api/secure/email/generate', {
+        // const response = await fetch('https://uttarai-kdfm.onrender.com/api/secure/email/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
