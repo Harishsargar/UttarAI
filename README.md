@@ -1,6 +1,6 @@
 # 🧠 UttarAI – Chrome Extension
 
-**UttarAI** is a Chrome Extension that provides smart, AI-generated replies for **Gmail** and **WhatsApp Web**. By capturing conversation context and leveraging a Spring Boot-powered backend, UttarAI automatically suggests personalized replies directly in the input box—saving time and improving communication efficiency.
+**UttarAI** is a Chrome Extension that provides smart, AI-generated replies for **Gmail** and **WhatsApp Web**. By capturing conversation context and leveraging a Spring Boot-powered backend, UttarAI automatically suggests personalized replies directly in the input box-saving time and improving communication efficiency.
 
 ---
 
@@ -218,7 +218,7 @@ Defines metadata and permissions for the extension:
 
 > ⚠️ **All payments are currently in test mode.**  
 > No real money is involved.  
-> You can complete the entire payment process using **dummy/test credentials** provided by Razorpay.  
+> You can complete the entire payment process using **dummy/test credentials**.  
 > Your API call quota will be updated based on the selected plan.
 
 ---
