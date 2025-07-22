@@ -14,7 +14,11 @@ import com.aireplye.aiwriter.dto.RegisterDTO;
 import com.aireplye.aiwriter.mongoEntity.User;
 import com.aireplye.aiwriter.mongoRepo.UserRepo;
 
+import jakarta.mail.MessagingException;
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class UserService {
 
     @Autowired
@@ -22,6 +26,9 @@ public class UserService {
 
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private EmailService emailService;
 
     // register user
     public User registerUser(RegisterDTO registerDTO) {
@@ -37,7 +44,13 @@ public class UserService {
         user.setPhoneNumber(registerDTO.getPhoneNumber());
         user.setCurrentPlan("Free_Tier");
         user.setApiCalls(25);    // this are the no of calls we are giving for frees
-        return userRepo.save(user);
+        User savedUser = userRepo.save(user);
+        try {
+            emailService.sendHtmlMail(savedUser.getEmail(), null, null);
+        } catch (MessagingException e) {
+            log.error("error while sending registration successfull mail", e);
+        }
+        return savedUser;
     }
 
 
