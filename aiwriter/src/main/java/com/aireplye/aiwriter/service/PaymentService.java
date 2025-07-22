@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.aireplye.aiwriter.dto.CurrentPlan;
 import com.aireplye.aiwriter.dto.OrderRequestDTO;
 import com.aireplye.aiwriter.dto.PaymentDetailsDTO;
+import com.aireplye.aiwriter.helper.MailHtmlHelper;
 import com.aireplye.aiwriter.mongoEntity.RazorpayOrder;
 import com.aireplye.aiwriter.mongoEntity.User;
 import com.aireplye.aiwriter.mongoRepo.RazorpayOrderRepo;
@@ -21,6 +22,10 @@ import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
 import com.razorpay.Utils;
 
+import jakarta.mail.MessagingException;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class PaymentService {
 
@@ -29,6 +34,9 @@ public class PaymentService {
 
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private EmailService emailService;
 
     @Value("${razorpay.api.key_id}")
     private String api_key;
@@ -69,19 +77,45 @@ public class PaymentService {
         paymentDetails.put("razorpay_payment_id", paymentDetailsDTO.getRazorpayPaymentId());
 
         RazorpayOrder razorpayOrder = razorpayOrderRepo.findByOrderId(paymentDetailsDTO.getRazorpayOrderId()).orElse(null);
+         User user = userRepo.findByEmail(principal.getName())
+                .orElseThrow(() -> new UsernameNotFoundException("user not fount with username"));
 
         if (Utils.verifyPaymentSignature(paymentDetails, api_secret)) {
             razorpayOrder.setStatus("completed");
             razorpayOrder.setPaymentId(paymentDetailsDTO.getRazorpayOrderId());
             razorpayOrderRepo.save(razorpayOrder);
-            User user = userRepo.findByEmail(principal.getName())
-                .orElseThrow(() -> new UsernameNotFoundException("user not fount with username"));
+           
             user.setCurrentPlan("Basic_Plan");    //for now hard coded later will load the dynamically
             user.setApiCalls(user.getApiCalls()+200);
+
+            // successfull payment email..........
+            String html = MailHtmlHelper.planpurchased
+                                        .replace("${username}", user.getName())
+                                        .replace("${plan_purchased}", user.getCurrentPlan())
+                                        .replace("${api_call_left}", String.valueOf(user.getApiCalls()))
+                                        .replace("${amount_paid}", "50")
+                                        .replace("${transaction_id}", paymentDetailsDTO.getRazorpayPaymentId());
+            try {
+                emailService.sendHtmlMail(user.getEmail(),"Transaction Confirmed Your "+ user.getCurrentPlan() +" Is Now Active", html);
+            } catch (Exception e) {
+                log.error("unable to send payment success mail", e);
+            }
+                                        
             userRepo.save(user);
             return true;
         } else {
             razorpayOrder.setStatus("failed");
+
+            //payment failed email.........
+            String html = MailHtmlHelper.paymentFailed
+                                        .replace("${username}", user.getName())
+                                        .replace("${plan_purchased}", "Basic Plan")
+                                        .replace("${transaction_id}", paymentDetailsDTO.getRazorpayOrderId());
+            try {
+                emailService.sendHtmlMail(user.getEmail(),"Your Uttar-AI Payment Was Unsuccessful", html);
+            } catch (MessagingException e) {
+                log.error("unable to send payment failed mail", e);
+            }
             razorpayOrderRepo.save(razorpayOrder);
             return false;
         }

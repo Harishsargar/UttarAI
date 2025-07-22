@@ -52,16 +52,8 @@ public class EmailController {
             if(user.getApiCalls()==10){  // sending mail to notify only 10 calls are left
                 String html = MailHtmlHelper.planExpiryNotifyMail
                                             .replace("${current_plan}", user.getCurrentPlan())
-                                            .replace("${api_calls}", String.valueOf(user.getApiCalls()));
-                try {
-                    emailService.sendHtmlMail(user.getEmail(), "API Limit Alert: You're Almost Out on Uttar-AI", html);
-                } catch (Exception e) {
-                    log.error("unable to send mail for low api count", e);
-                }
-            }else if(user.getApiCalls()==5){  // sending mail to notify only 5 calls are left
-                String html = MailHtmlHelper.planExpiryNotifyMail
-                                            .replace("${current_plan}", user.getCurrentPlan())
-                                            .replace("${api_calls}", String.valueOf(user.getApiCalls()));
+                                            .replace("${api_calls}", String.valueOf(user.getApiCalls()))
+                                            .replace("${username}", user.getName());;
                 try {
                     emailService.sendHtmlMail(user.getEmail(), "API Limit Alert: You're Almost Out on Uttar-AI", html);
                 } catch (Exception e) {
@@ -73,6 +65,17 @@ public class EmailController {
         }else{
             user.setCurrentPlan(null);
             user.setApiCalls(0);
+            if(user.getApiCalls()==0){  // sending mail to notify plan expired
+                String html = MailHtmlHelper.planExpiryNotifyMail
+                                            .replace("${current_plan}", user.getCurrentPlan())
+                                            .replace("${api_calls}", String.valueOf(user.getApiCalls()))
+                                            .replace("${username}", user.getName());;
+                try {
+                    emailService.sendHtmlMail(user.getEmail(), "Your Uttar-AI Plan Has Expired - Renew Now to Stay Connected", html);
+                } catch (Exception e) {
+                    log.error("unable to send plan expiry mail", e);
+                }
+            }
             userService.saveUser(user);
             return new ResponseEntity<>("API limit reached. Please upgrade your plan.",HttpStatus.PAYMENT_REQUIRED);
         }
