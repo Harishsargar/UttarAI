@@ -9,6 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.aireplye.aiwriter.dto.RegisterDTO;
+import com.aireplye.aiwriter.helper.MailHtmlHelper;
 // import com.aireplye.aiwriter.entity.User;
 // import com.aireplye.aiwriter.repository.UserRepo;
 import com.aireplye.aiwriter.mongoEntity.User;
@@ -46,7 +47,8 @@ public class UserService {
         user.setApiCalls(25);    // this are the no of calls we are giving for frees
         User savedUser = userRepo.save(user);
         try {
-            emailService.sendHtmlMail(savedUser.getEmail(), null, null);
+            String html = MailHtmlHelper.welcomehtml.replace("${username}", savedUser.getName());
+            emailService.sendHtmlMail(savedUser.getEmail(), "Welcome to Uttar-AI! Your Free API Access is Ready 🚀", html);
         } catch (MessagingException e) {
             log.error("error while sending registration successfull mail", e);
         }
