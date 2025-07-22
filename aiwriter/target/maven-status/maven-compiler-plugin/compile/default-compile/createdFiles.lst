@@ -5,8 +5,10 @@ com\aireplye\aiwriter\dto\PaymentDetailsDTO.class
 com\aireplye\aiwriter\config\SecurityConfig.class
 com\aireplye\aiwriter\AiwriterApplication.class
 com\aireplye\aiwriter\comtroller\WhatsappController.class
+com\aireplye\aiwriter\helper\MailHtmlHelper.class
 com\aireplye\aiwriter\comtroller\EmailController.class
 com\aireplye\aiwriter\dto\MessageRequest.class
+com\aireplye\aiwriter\comtroller\PingController.class
 com\aireplye\aiwriter\mongoRepo\RazorpayOrderRepo.class
 com\aireplye\aiwriter\dto\EmailRequest.class
 com\aireplye\aiwriter\comtroller\Home.class
@@ -26,6 +28,7 @@ com\aireplye\aiwriter\mongoRepo\UserRepo.class
 com\aireplye\aiwriter\config\WebClientConfig.class
 com\aireplye\aiwriter\repository\UserRepo.class
 com\aireplye\aiwriter\mongoEntity\User.class
+com\aireplye\aiwriter\service\EmailService.class
 com\aireplye\aiwriter\config\JwtAuthenticationEntryPoint.class
 com\aireplye\aiwriter\entity\User.class
 com\aireplye\aiwriter\comtroller\PaymentController.class

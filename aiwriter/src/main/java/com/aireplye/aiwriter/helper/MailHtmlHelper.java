@@ -70,7 +70,7 @@ public class MailHtmlHelper {
                         "        <li>🚀 Unlock more API calls without interruptions</li>\r\n" + //
                         "        <li>💬 Integrate easily with Gmail, WhatsApp & more</li>\r\n" + //
                         "      </ul>\r\n" + //
-                        "\r\n" + //
+                        "<h2 style=\"font-weight: bolder; color:rgb(235, 0, 70);\"> All payments are in test mode. No real Money is Involved </h2>\r\n" + //
                         "      <div style=\"text-align: center;\">\r\n" + //
                         "        <a href=\"https://uttar-ai.vercel.app/\" target=\"_blank\" style=\"display: inline-block; margin-top: 20px; padding: 12px 20px; background-color: rgb(219, 8, 135); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: bold;\">\r\n" + //
                         "          Upgrade Your Plan\r\n" + //
@@ -118,7 +118,7 @@ public class MailHtmlHelper {
                 "      </ul>\r\n" + //
                 "\r\n" + //
                 "      <p>You can now continue using all premium features of Uttar-AI without interruption.</p>\r\n" + //
-                "\r\n" + //
+                "<h2 style=\"font-weight: bolder; color:rgb(235, 0, 70);\"> All payments are in test mode. No real Money is Involved </h2>\r\n" + //
                 "      <div style=\"text-align: center;\">\r\n" + //
                 "        <a href=\"https://uttar-ai.vercel.app/\" target=\"_blank\" style=\"display: inline-block; margin-top: 25px; padding: 12px 20px; background-color: rgb(219, 8, 135); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: bold;\">\r\n" + //
                 "          Go to Dashboard\r\n" + //
@@ -161,7 +161,7 @@ public class MailHtmlHelper {
                 "      <p>If any amount was debited from your bank account or wallet, it will be automatically refunded within <strong>3–4 business days</strong>.</p>\r\n" + //
                 "\r\n" + //
                 "      <p>To continue enjoying premium access, please retry the payment at your convenience.</p>\r\n" + //
-                "\r\n" + //
+                "<h2 style=\"font-weight: bolder; color:rgb(235, 0, 70);\"> All payments are in test mode. No real Money is Involved </h2>\r\n" + //
                 "      <div style=\"text-align: center;\">\r\n" + //
                 "        <a href=\"https://uttar-ai.vercel.app/pricing\" target=\"_blank\" style=\"display: inline-block; margin-top: 20px; padding: 12px 20px; background-color: #e63946; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: bold;\">\r\n" + //
                 "          Retry Payment\r\n" + //
