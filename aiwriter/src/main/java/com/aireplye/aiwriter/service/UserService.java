@@ -47,7 +47,7 @@ public class UserService {
         user.setApiCalls(25);    // this are the no of calls we are giving for frees
         User savedUser = userRepo.save(user);
         try {
-            String html = MailHtmlHelper.welcomehtml.replace("${username}", savedUser.getName());
+            String html = MailHtmlHelper.welcomehtmlMail.replace("${username}", savedUser.getName());
             emailService.sendHtmlMail(savedUser.getEmail(), "Welcome to Uttar-AI! Your Free API Access is Ready 🚀", html);
         } catch (MessagingException e) {
             log.error("error while sending registration successfull mail", e);
