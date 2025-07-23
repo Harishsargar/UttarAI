@@ -63,7 +63,7 @@ public class EmailController {
             userService.saveUser(user);
             return ResponseEntity.ok(generatedEmail);
         }else{
-            user.setCurrentPlan(null);
+            // user.setCurrentPlan(null);
             user.setApiCalls(0);
             if(user.getApiCalls()==0){  // sending mail to notify plan expired
                 String html = MailHtmlHelper.planExpiryNotifyMail

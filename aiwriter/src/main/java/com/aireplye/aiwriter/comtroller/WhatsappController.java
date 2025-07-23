@@ -53,7 +53,7 @@ public class WhatsappController {
                 String html = MailHtmlHelper.planExpiryNotifyMail
                                             .replace("${current_plan}", user.getCurrentPlan())
                                             .replace("${api_calls}", String.valueOf(user.getApiCalls()))
-                                            .replace("${username}", user.getName());;
+                                            .replace("${username}", user.getName());
                 try {
                     emailService.sendHtmlMail(user.getEmail(), "API Limit Alert: You're Almost Out on Uttar-AI", html);
                 } catch (Exception e) {
@@ -63,9 +63,9 @@ public class WhatsappController {
             userService.saveUser(user);
             return ResponseEntity.ok(generatedMessage);
         }else{
-            user.setCurrentPlan(null);
+            // user.setCurrentPlan(null);
             user.setApiCalls(0);
-            if(user.getApiCalls()==5){  // sending mail to notify plan expired
+            if(user.getApiCalls()==0){  // sending mail to notify plan expired
                 String html = MailHtmlHelper.planExpiryNotifyMail
                                             .replace("${current_plan}", user.getCurrentPlan())
                                             .replace("${api_calls}", String.valueOf(user.getApiCalls()))
